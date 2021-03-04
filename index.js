@@ -11,7 +11,7 @@ client.events = new Discord.Collection();
 
 client.once('ready', () => {
     client.user.setActivity('c!help | Beta Version | Full Release Upcoming | Low Latency and 100% Free!!! | Created by BLXESSED#3960', {type: 'LISTENING'});
-    console.log("cloudz has "+client.users.size+" users, in "+client.channels.size+" channels of "+client.guilds.size+" guilds!");`
+    console.log("cloudz has "+client.users.size+" users, in "+client.channels.size+" channels of "+client.guilds.size+" guilds!");
 });
 
 client.login(process.env.TOKEN);
