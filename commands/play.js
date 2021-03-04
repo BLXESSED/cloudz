@@ -7,7 +7,7 @@ module.exports = {
     name: 'play',
     aliases: ['skip', 'stop'],
     description: 'Advanced music bot',
-    async execute(message, args, cmd, client, Discord, profileData){
+    async execute(message, args, cmd, client, Discord){
 
         const newEmbed1 = new Discord.MessageEmbed()
         .setColor("#000000")
