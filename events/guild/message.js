@@ -1,5 +1,3 @@
-const profileModel = require('../../models/profileSchema');
-const { findOneAndDelete } = require('../../models/profileSchema');
 const cooldowns = new Map();
 
 module.exports = async (Discord, client, message) => {
