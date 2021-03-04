@@ -40,28 +40,28 @@ module.exports = async (Discord, client, message) => {
     const testchannel = '808182511255027765';
     if (message.channel.id == channel) {
     try {
-        command.execute(message, args, cmd, client, Discord, profileData);
+        command.execute(message, args, cmd, client, Discord);
     } catch (err) {
         console.log(err);
     }
     } else {
         if(message.channel.id == channel2) {
             try {
-                command.execute(message, args, cmd, client, Discord, profileData);
+                command.execute(message, args, cmd, client, Discord);
             } catch (err) {
                 console.log(err);
         }
     } else {
         if(message.channel.id == testchannel) {
             try {
-                command.execute(message, args, cmd, client, Discord, profileData);
+                command.execute(message, args, cmd, client, Discord);
             } catch (err) {
                 console.log(err);
             }
         } else {
             if(message.member.roles.cache.has('796623792200744963')) { 
                 try {
-                    command.execute(message, args, cmd, client, Discord, profileData);
+                    command.execute(message, args, cmd, client, Discord);
                 } catch (err) {
                     message.reply("Error404");
                     console.log(err);
