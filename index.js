@@ -10,7 +10,7 @@ client.events = new Discord.Collection();
 });
 
 client.once('ready', () => {
-    client.user.setActivity('c!help | Beta Version | Full Release Undecided | Created by BLXESSED#3960', {type: 'LISTENING'});
+    client.user.setActivity('c!help | Beta Version | Full Release Upcoming | Created by BLXESSED#3960', {type: 'LISTENING'});
 });
 
 client.login(process.env.TOKEN);
