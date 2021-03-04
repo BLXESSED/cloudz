@@ -32,42 +32,9 @@ module.exports = async (Discord, client, message) => {
     time_stamps.set(message.author.id, current_time);
     setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount)
 
-    const channel = member.guild.channels.cache.find(channel => channel.name === "🤖bot-commands");
-    if(!channel) return client.channels.cache.get(message.channel.id).send(`${message.author.tag}, I could not find the #🤖bot-commands channel`)
-    const channel2 = '799439732823294033';
-    const testchannel = '808182511255027765';
-    if (message.channel.id == channel) {
     try {
         command.execute(message, args, cmd, client, Discord);
     } catch (err) {
         console.log(err);
     }
-    } else {
-        if(message.channel.id == channel2) {
-            try {
-                command.execute(message, args, cmd, client, Discord);
-            } catch (err) {
-                console.log(err);
-        }
-    } else {
-        if(message.channel.id == testchannel) {
-            try {
-                command.execute(message, args, cmd, client, Discord);
-            } catch (err) {
-                console.log(err);
-            }
-        } else {
-            if(message.member.roles.cache.has('796623792200744963')) { 
-                try {
-                    command.execute(message, args, cmd, client, Discord);
-                } catch (err) {
-                    message.reply("Error404");
-                    console.log(err);
-                }
-            } else {
-        message.reply("you can't use that here. You can only use commands in #🤖bot-commands")
-        }
-    }
-}
-}
 }
