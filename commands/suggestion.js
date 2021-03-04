@@ -9,7 +9,6 @@ module.exports = {
         .setTitle("Help")
         .setDescription("c!suggestion [suggestion]")
 
-        const newEmbed = new MSAssert
         const channel = message.guild.channels.cache.find(813916514901295124);
         if(!channel) return message.channel.send("Suggestion channel does not exsit");
         if(!args[0]) return message.channel.send(newEmbed)
