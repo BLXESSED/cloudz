@@ -7,7 +7,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
         .setColor("#1E90FF")
         .setTitle("Help")
-        .setDescription("Here's a list of some useful commands\n\n(To learn more about the command type only the first word in a command. For example, if you type `.play` you'll get information on how to use the play command)")
+        .setDescription("Here's a list of some useful commands\n\n")
         .addFields(
             {name: '**⚙️ Miscellaneous**', value: "`c!help miscellaneous`", inline: true},
         )
