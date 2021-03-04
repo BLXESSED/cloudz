@@ -9,6 +9,6 @@ module.exports = {
         .setURL('https://discord.gg/WuKeMFyhaB')
         .setDescription("Please use the link above to join out official discord server!")
 
-        message.channel.send("newEmbed")
+        message.channel.send(newEmbed)
     }
 }
