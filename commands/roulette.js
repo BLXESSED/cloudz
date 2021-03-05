@@ -53,6 +53,7 @@ module.exports = {
                 {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
+            message.channel.send(newEmbed4)
             return
         }catch(err){
             console.log(err)
@@ -76,6 +77,7 @@ module.exports = {
                 {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
+            message.channel.send(newEmbed4)
         }catch(err){
             console.log(err)
         }
@@ -103,6 +105,7 @@ module.exports = {
                     {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                     {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
                 )
+                message.channel.send(newEmbed4)
             }catch(err){
                 console.log(err)
             }
@@ -126,6 +129,7 @@ module.exports = {
                     {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                     {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
                 )
+                message.channel.send(newEmbed4)
                 }catch(err){
                     console.log(err)
                 }
@@ -153,6 +157,7 @@ module.exports = {
                 {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
+            message.channel.send(newEmbed4)
         }catch(err){
             console.log(err)
         }
@@ -176,6 +181,7 @@ module.exports = {
                 {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
+            message.channel.send(newEmbed4)
         }catch(err){
             console.log(err)
         }
