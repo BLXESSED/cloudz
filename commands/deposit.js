@@ -1,6 +1,6 @@
 const profileModel = require('../models/profileSchema');
 module.exports = {
-    name: 'deposite',
+    name: 'deposit',
     aliases: ["dep"],
     description: "deposite coins into your bank",
     async execute(message, args, cmd, client, Discord, profileData){
@@ -14,6 +14,11 @@ module.exports = {
         .setColor("#FF0000")
         .setTitle("💵 Economy")
         .setDescription("You can only deposit the coins in your wallet")
+
+        const newEmbed3 = new Discord.MessageEmbed()
+        .setColor("#FFFFFF")
+        .setTitle("Help")
+        .setDescription("c!deposit [amount]")
 
         if(!args[0]) return message.channel.send(newEmbed2);
         const amount = args[0];
