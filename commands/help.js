@@ -9,7 +9,7 @@ module.exports = {
         .setTitle("Help")
         .setDescription("Here's some useful commands\n\n")
         .addFields(
-            {name: '**💵 Economy**', value: "`c!help Economy`", inline: true},
+            {name: '**💵 Economy**', value: "`c!help economy`", inline: true},
             {name: '**🎶 Music**', value: "`c!help music`", inline: true},
             {name: '**⚙️ Miscellaneous**', value: "`c!help miscellaneous`", inline: true},
         )
