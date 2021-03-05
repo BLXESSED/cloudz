@@ -23,7 +23,6 @@ module.exports = {
         if(!args[0]) return message.channel.send(newEmbed1)
         const amount = args[0]
         if(!args[1]) return message.channel.send(newEmbed1)
-        const selectedcolor = args[1]
         if(args[0] % 1 != 0 || amount <= 0) return message.channel.send(newEmbed2);
         if(amount > profileData.coins) return message.channel.send(newEmbed3);
 
@@ -36,7 +35,7 @@ module.exports = {
         if(spin % 2 == 0){
             const color = "red"
             const winning_amount = amount * 2
-            if(selectedcolor = "red"){
+            if(args[1] = "red"){
                 await profileModel.findOneAndUpdate({
                     userID: message.author.id
                 }, {
@@ -51,7 +50,7 @@ module.exports = {
             .setTitle("💵 Economy")
             .setDescription(`You won **${winning_amount} coins**\n`)
             .addFields(
-                {name: `${player}`, value: `Picked ${selectedcolor}`, inline: true},
+                {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
             return
@@ -70,7 +69,7 @@ module.exports = {
             .setTitle("💵 Economy")
             .setDescription(`You lost **${amount} coins**\n`)
             .addFields(
-                {name: `${player}`, value: `Picked ${selectedcolor}`, inline: true},
+                {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
             }
@@ -79,7 +78,7 @@ module.exports = {
         else if(spin === "35"){
                 const color = "green"
                 const winning_amount = amount * 35
-                if(selectedcolor = "green"){
+                if(args[1] = "green"){
                     await profileModel.findOneAndUpdate({
                         userID: message.author.id
                     }, {
@@ -94,7 +93,7 @@ module.exports = {
                 .setTitle("💵 Economy")
                 .setDescription(`You won **${winning_amount} coins**\n`)
                 .addFields(
-                    {name: `${player}`, value: `Picked ${selectedcolor}`, inline: true},
+                    {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                     {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
                 )
                 return
@@ -113,7 +112,7 @@ module.exports = {
                 .setTitle("💵 Economy")
                 .setDescription(`You lost **${amount} coins**\n`)
                 .addFields(
-                    {name: `${player}`, value: `Picked ${selectedcolor}`, inline: true},
+                    {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                     {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
                 )
                 }
@@ -121,7 +120,7 @@ module.exports = {
         }else{
             const color = "black"
             const winning_amount = amount * 2
-            if(selectedcolor = "black"){
+            if(args[1] = "black"){
                 await profileModel.findOneAndUpdate({
                     userID: message.author.id
                 }, {
@@ -136,7 +135,7 @@ module.exports = {
             .setTitle("💵 Economy")
             .setDescription(`You won **${winning_amount} coins**\n`)
             .addFields(
-                {name: `${player}`, value: `Picked ${selectedcolor}`, inline: true},
+                {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
             return
@@ -155,7 +154,7 @@ module.exports = {
             .setTitle("💵 Economy")
             .setDescription(`You lost **${amount} coins**\n`)
             .addFields(
-                {name: `${player}`, value: `Picked ${selectedcolor}`, inline: true},
+                {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
             }

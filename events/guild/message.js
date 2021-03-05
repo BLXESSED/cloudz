@@ -48,7 +48,7 @@ module.exports = async (Discord, client, message) => {
             let minutes = Math.floor(time_left / 60000) % 60;
             let seconds = Math.floor(time_left / 1000) % 60;
       
-            return message.channel.send(`You can use .${command.name} in ${days}days, ${hours}hours, ${minutes}minutes, and ${seconds}seconds`);
+            return message.channel.send(`You can use .${command.name} in ${days} days, ${hours} hours, ${minutes} minutes, and ${seconds} seconds`);
         }
     }
 
