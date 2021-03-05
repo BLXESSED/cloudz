@@ -69,7 +69,7 @@ module.exports = {
                 } 
             );
 
-            const newEmbed4 = new Discord.MessageEmbed()
+            const newEmbed5 = new Discord.MessageEmbed()
             .setColor("#FF0000")
             .setTitle("💵 Economy")
             .setDescription(`You lost **${amount} coins**\n`)
@@ -77,7 +77,7 @@ module.exports = {
                 {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
-            message.channel.send(newEmbed4)
+            message.channel.send(newEmbed5)
         }catch(err){
             console.log(err)
         }
@@ -97,7 +97,7 @@ module.exports = {
                     } 
                 );
         
-                const newEmbed4 = new Discord.MessageEmbed()
+                const newEmbed6 = new Discord.MessageEmbed()
                 .setColor("#008000")
                 .setTitle("💵 Economy")
                 .setDescription(`You won **${winning_amount} coins**\n`)
@@ -105,7 +105,7 @@ module.exports = {
                     {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                     {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
                 )
-                message.channel.send(newEmbed4)
+                message.channel.send(newEmbed6)
             }catch(err){
                 console.log(err)
             }
@@ -121,7 +121,7 @@ module.exports = {
                     } 
                 );
         
-                const newEmbed4 = new Discord.MessageEmbed()
+                const newEmbed7 = new Discord.MessageEmbed()
                 .setColor("#FF0000")
                 .setTitle("💵 Economy")
                 .setDescription(`You lost **${amount} coins**\n`)
@@ -129,13 +129,15 @@ module.exports = {
                     {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                     {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
                 )
-                message.channel.send(newEmbed4)
+
+                message.channel.send(newEmbed7)
                 }catch(err){
                     console.log(err)
                 }
                 return
             }
-        }else{
+        }
+        if(spin % 2 == 0){
             const color = "black"
             const winning_amount = amount * 2
             if(args[1] = "black"){
@@ -149,7 +151,7 @@ module.exports = {
                 } 
             );
     
-            const newEmbed4 = new Discord.MessageEmbed()
+            const newEmbed8 = new Discord.MessageEmbed()
             .setColor("#008000")
             .setTitle("💵 Economy")
             .setDescription(`You won **${winning_amount} coins**\n`)
@@ -157,7 +159,7 @@ module.exports = {
                 {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
-            message.channel.send(newEmbed4)
+            message.channel.send(newEmbed8)
         }catch(err){
             console.log(err)
         }
@@ -173,7 +175,7 @@ module.exports = {
                 } 
             );
     
-            const newEmbed4 = new Discord.MessageEmbed()
+            const newEmbed9 = new Discord.MessageEmbed()
             .setColor("#FF0000")
             .setTitle("💵 Economy")
             .setDescription(`You lost **${amount} coins**\n`)
@@ -181,7 +183,7 @@ module.exports = {
                 {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
-            message.channel.send(newEmbed4)
+            message.channel.send(newEmbed9)
         }catch(err){
             console.log(err)
         }
