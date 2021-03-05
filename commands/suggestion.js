@@ -9,7 +9,9 @@ module.exports = {
         .setTitle("Help")
         .setDescription("c!suggestion [suggestion]")
 
-        const sugchannel = "813916514901295124"
+        const member = "384571447496146955"
+
+        const sugchannel = member.guild.channels.cache.find(813916514901295124)
         if(!sugchannel) return message.channel.send("Suggestion channel does not exsit");
         if(!args[0]) return message.channel.send(newEmbed)
 
@@ -26,5 +28,7 @@ module.exports = {
         }).catch((err)=>{
             throw err;
         })
+
+        message.channel.send("You suggestion has been sent")
     }
 }

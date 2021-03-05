@@ -18,11 +18,11 @@ module.exports = {
         const newEmbed3 = new Discord.MessageEmbed()
         .setColor("#FFFFFF")
         .setTitle("Help")
-        .setDescription(`${process.env.PREFIX}withdraw [amount]`)
+        .setDescription(`c!withdraw [amount]`)
 
         if(!args[0]) return message.channel.send(newEmbed2);
         const amount = args[0];
-        if(!args[1]) return message.channel.send()
+        if(!args[1]) return message.channel.send(newEmbed3)
         if(args % 1 != 0 || amount <= 0) return message.channel.send(newEmbed1);
         try{
             if(amount > profileData.bank) return message.channel.send(newEmbed2);
