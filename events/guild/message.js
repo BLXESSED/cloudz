@@ -41,13 +41,12 @@ module.exports = async (Discord, client, message) => {
         const expiration_time = time_stamps.get(message.author.id) + cooldown_amount;
 
         if(current_time < expiration_time){
-            const time_left = (expiration_time - current_time) / 1000;
+            const time_left = (expiration_time - current_time)
 
-
-            let days = Math.floor(time_left.toFixed(1) / 86400000);
-            let hours = Math.floor(time_left.toFixed(1) / 3600000) % 24;
-            let minutes = Math.floor(time_left.toFixed(1) / 60000) % 60;
-            let seconds = Math.floor(time_left.toFixed(1) / 1000) % 60;
+            let days = Math.floor(time_left / 86400000);
+            let hours = Math.floor(time_left / 3600000) % 24;
+            let minutes = Math.floor(time_left / 60000) % 60;
+            let seconds = Math.floor(time_left / 1000) % 60;
       
             return message.channel.send(`You can use .${command.name} in ${days}days, ${hours}hours, ${minutes}minutes, and ${seconds}seconds`);
         }

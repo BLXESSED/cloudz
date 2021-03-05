@@ -36,7 +36,6 @@ module.exports = {
         if(spin % 2 == 0){
             const color = "red"
             const winning_amount = amount * 2
-            await message.channel.send("red")
             if(selectedcolor = "red"){
                 await profileModel.findOneAndUpdate({
                     userID: message.author.id
@@ -79,11 +78,87 @@ module.exports = {
             }
         else if(spin === "35"){
                 const color = "green"
-                message.channel.send("green")
+                const winning_amount = amount * 35
+                if(selectedcolor = "green"){
+                    await profileModel.findOneAndUpdate({
+                        userID: message.author.id
+                    }, {
+                        $inc: {
+                            coins: winning_amount,
+                        }
+                    } 
+                );
+        
+                const newEmbed4 = new Discord.MessageEmbed()
+                .setColor("#FF0000")
+                .setTitle("💵 Economy")
+                .setDescription(`You won **${winning_amount} coins**\n`)
+                .addFields(
+                    {name: `${player}`, value: `Picked ${selectedcolor}`, inline: true},
+                    {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
+                )
+                return
+                }else{
+                    await profileModel.findOneAndUpdate({
+                        userID: message.author.id
+                    }, {
+                        $inc: {
+                            coins: -amount,
+                        }
+                    } 
+                );
+        
+                const newEmbed4 = new Discord.MessageEmbed()
+                .setColor("#FF0000")
+                .setTitle("💵 Economy")
+                .setDescription(`You lost **${amount} coins**\n`)
+                .addFields(
+                    {name: `${player}`, value: `Picked ${selectedcolor}`, inline: true},
+                    {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
+                )
+                }
                 return
         }else{
             const color = "black"
-            message.channel.send("black")
+            const winning_amount = amount * 2
+            if(selectedcolor = "black"){
+                await profileModel.findOneAndUpdate({
+                    userID: message.author.id
+                }, {
+                    $inc: {
+                        coins: winning_amount,
+                    }
+                } 
+            );
+    
+            const newEmbed4 = new Discord.MessageEmbed()
+            .setColor("#FF0000")
+            .setTitle("💵 Economy")
+            .setDescription(`You won **${winning_amount} coins**\n`)
+            .addFields(
+                {name: `${player}`, value: `Picked ${selectedcolor}`, inline: true},
+                {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
+            )
+            return
+            }else{
+                await profileModel.findOneAndUpdate({
+                    userID: message.author.id
+                }, {
+                    $inc: {
+                        coins: -amount,
+                    }
+                } 
+            );
+    
+            const newEmbed4 = new Discord.MessageEmbed()
+            .setColor("#FF0000")
+            .setTitle("💵 Economy")
+            .setDescription(`You lost **${amount} coins**\n`)
+            .addFields(
+                {name: `${player}`, value: `Picked ${selectedcolor}`, inline: true},
+                {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
+            )
+            }
             return
         }
     }
