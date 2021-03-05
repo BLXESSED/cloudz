@@ -32,9 +32,75 @@ module.exports = {
         
         message.channel.send(spin)
 
+        if(spin % 2 == 0){
+            const color = "red"
+        }else if (spin = 35){
+            const color = "green"
+        }else if (!spin % 2 == 0){
+            const color = "black"
+        }else{
+            message.channel.send("There was an error")
+        }
+
+        if(!color) return message.channel.send("There was an error")
+
         if(args[1] = "red"){
+            const winning_amount = amount * 2
             if(spin % 2 == 0){
+                try{
+                    await profileModel.findOneAndUpdate({
+                        userID: message.author.id
+                    }, {
+                        $inc: {
+                            coins: winning_amount,
+                        }
+                    } 
+                );
+
+                const newEmbed4 = new Discord.MessageEmbed()
+                .setColor("#008000")
+                .setTitle("💵 Economy")
+                .setDescription(`You won **${winning_amount} coins**`)
+                .addFields(
+                    {name: `${player}`, value: `Picked red`, inline: true},
+                    {name: "BLESSED's Utilities", value: `Spun ${color}`, inline: true},
+                )
+                
+                message.channel.send(newEmbed4)
+
+            }catch(err){
+                console.log(err)
+                }
+
+            return
+            }else{
+                try{
+                    await profileModel.findOneAndUpdate({
+                        userID: message.author.id
+                    }, {
+                        $inc: {
+                            coins: -amount,
+                        }
+                    } 
+                );
+                const newEmbed4 = new Discord.MessageEmbed()
+                .setColor("#008000")
+                .setTitle("💵 Economy")
+                .setDescription(`You lost **${amount} coins**`)
+                .addFields(
+                    {name: `${player}`, value: `Picked red`, inline: true},
+                    {name: "BLESSED's Utilities", value: `Spun ${color}`, inline: true},
+                )
+                
+                message.channel.send(newEmbed4)
+                
+            }catch(err){
+                console.log(err)
+                }
+                return 
             }
+
+            
         }
     }
 }
