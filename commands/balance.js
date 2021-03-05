@@ -26,7 +26,7 @@ module.exports = {
         return
         }else{
         const newEmbed1 = new Discord.MessageEmbed()
-        .setColor("#1E90FF")
+        .setColor("#FFFFFF")
         .setAuthor(message.author.tag + "'s balance", message.author.displayAvatarURL({ dynamic: true}))
         .setDescription(`Wallet: ¢${profileData.coins}\nBank: ¢${profileData.bank}`)
         message.channel.send(newEmbed1)

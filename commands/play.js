@@ -10,7 +10,7 @@ module.exports = {
     async execute(message, args, cmd, client, Discord, profileData){
 
         const newEmbed1 = new Discord.MessageEmbed()
-        .setColor("#000000")
+        .setColor("#FFFFFF")
         .setTitle("Help")
         .setDescription("`c!play [song/youtube link]`")
 

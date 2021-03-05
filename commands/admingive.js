@@ -5,7 +5,7 @@ module.exports = {
     async execute(message, args, cmd, client, Discord, profileData){
 
         const newEmbed1 = new Discord.MessageEmbed()
-        .setColor("#1E90FF")
+        .setColor("#FFFFFF")
         .setTitle("Help")
         .setDescription("`c!give [@username] [amount]`")
 
@@ -20,7 +20,7 @@ module.exports = {
         .setDescription("You can only give a whole number")
 
         const newEmbed4 = new Discord.MessageEmbed()
-        .setColor("#1E90FF")
+        .setColor("#FFFFFF")
         .setTitle("Help")
         .setDescription("You need specify the amount of coins you would like to give")
 

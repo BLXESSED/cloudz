@@ -5,7 +5,7 @@ module.exports = {
       
         if(!args[0]){
         const newEmbed = new Discord.MessageEmbed()
-        .setColor("#1E90FF")
+        .setColor("#FFFFFF")
         .setTitle("Help")
         .setDescription("Here's some useful commands\n\n")
         .addFields(
@@ -18,7 +18,7 @@ module.exports = {
 
         if(args[0] ==  "economy"){
             const newEmbedEconomy = new Discord.MessageEmbed()
-            .setColor("#1E90FF")
+            .setColor("#FFFFFF")
             .setTitle("💵 Economy")
             .setDescription("`c!balance [@username (optional)], c!beg, c!deposit, c!withdraw, c!diceroll, c!rob, c!give`")
             .setFooter("More commands are coimg soon!")
@@ -27,7 +27,7 @@ module.exports = {
 
         if(args[0] == "music"){
             const newEmbedMusic = new Discord.MessageEmbed()
-            .setColor("#1E90FF")
+            .setColor("#FFFFFF")
             .setTitle("🎶 Music")
             .setDescription("`c!play [song name/youtube url], c!skip, c!stop`")
             .setFooter("More commands are coimg soon!")
@@ -36,7 +36,7 @@ module.exports = {
 
         if(args[0] == "miscellaneous"){
             const newEmbedMiscellaneous = new Discord.MessageEmbed()
-            .setColor("#1E90FF")
+            .setColor("#FFFFFF")
             .setTitle("⚙️ Miscellaneous")
             .setDescription("`c!help, c!creator, c!server, c!ping, c!invite, c!suggestion`")
             message.channel.send(newEmbedMiscellaneous)

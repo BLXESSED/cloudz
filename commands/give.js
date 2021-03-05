@@ -10,7 +10,7 @@ module.exports = {
         .setDescription("That user does not exist")
 
         const newEmbed2 = new Discord.MessageEmbed()
-        .setColor("#1E90FF")
+        .setColor("#FFFFFF")
         .setTitle("Help")
         .setDescription("c!give [@username] [amount]")
 

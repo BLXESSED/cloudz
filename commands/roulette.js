@@ -6,7 +6,7 @@ module.exports = {
     async execute(message, args, cmd, client, Discord, profileData){
         
         const newEmbed1 = new Discord.MessageEmbed()
-        .setColor("#1E90FF")
+        .setColor("#FFFFFF")
         .setTitle("Help")
         .setDescription("`c!roulette [amount] [color]`")
 

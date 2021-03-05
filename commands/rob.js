@@ -16,7 +16,7 @@ module.exports = {
         .setDescription("You can't rob someone who has barely anything in his pockets")
 
         const newEmbed3 = new Discord.MessageEmbed()
-        .setColor("#1E90FF")
+        .setColor("#FFFFFF")
         .setTitle("Help")
         .setDescription("c!rob [@username]")
 
