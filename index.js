@@ -10,7 +10,7 @@ client.events = new Discord.Collection();
 });
 
 client.once('ready', () => {
-    client.user.setActivity('c!help | Beta Version | Full Release Upcoming | Low Latency and 100% Free!!! | Type c!invite to invite this bot to your server | Created by BLXESSED#3960', {type: 'LISTENING'});
+    client.user.setActivity('c!help | Beta Version | Full Release Upcoming | Low Latency and 100% Free!!! | Type c!invite to invite me | Created by BLXESSED#3960', {type: 'LISTENING'});
     console.log(`cloudz has ${client.users.cache.size} users, in ${client.guilds.cache.size} servers!`);
 });
 
