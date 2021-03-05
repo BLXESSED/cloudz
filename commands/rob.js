@@ -18,7 +18,7 @@ module.exports = {
         const newEmbed3 = new Discord.MessageEmbed()
         .setColor("#1E90FF")
         .setTitle("Help")
-        .setDescription("!rob [@username]")
+        .setDescription("c!rob [@username]")
 
         const newEmbed4 = new Discord.MessageEmbed()
         .setColor("#FF0000")

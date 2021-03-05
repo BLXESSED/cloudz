@@ -8,7 +8,7 @@ module.exports = {
         const newEmbed1 = new Discord.MessageEmbed()
         .setColor("#1E90FF")
         .setTitle("Help")
-        .setDescription("`!diceroll [amount]`")
+        .setDescription("`c!diceroll [amount]`")
 
         const newEmbed2 = new Discord.MessageEmbed()
         .setColor("#FF0000")

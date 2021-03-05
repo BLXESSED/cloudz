@@ -9,7 +9,7 @@ module.exports = {
         .setTitle("Help")
         .setDescription("Here's some useful commands\n\n")
         .addFields(
-            {name: '**💵 Economy**', value: "`!help Economy`", inline: true},
+            {name: '**💵 Economy**', value: "`c!help Economy`", inline: true},
             {name: '**🎶 Music**', value: "`c!help music`", inline: true},
             {name: '**⚙️ Miscellaneous**', value: "`c!help miscellaneous`", inline: true},
         )
@@ -20,7 +20,7 @@ module.exports = {
             const newEmbedEconomy = new Discord.MessageEmbed()
             .setColor("#1E90FF")
             .setTitle("💵 Economy")
-            .setDescription("`!balance [@username (optional)], !beg, !deposit, !withdraw, !diceroll, !rob, !give`")
+            .setDescription("`c!balance [@username (optional)], c!beg, c!deposit, c!withdraw, c!diceroll, c!rob, c!give`")
             .setFooter("More commands are coimg soon!")
             message.channel.send(newEmbedEconomy)
         }
