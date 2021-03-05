@@ -36,6 +36,7 @@ module.exports = {
             const color = "red"
             const winning_amount = amount * 2
             if(args[1] = "red"){
+                try{
                 await profileModel.findOneAndUpdate({
                     userID: message.author.id
                 }, {
@@ -44,7 +45,6 @@ module.exports = {
                     }
                 } 
             );
-    
             const newEmbed4 = new Discord.MessageEmbed()
             .setColor("#FF0000")
             .setTitle("💵 Economy")
@@ -54,7 +54,11 @@ module.exports = {
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
             return
+        }catch(err){
+            console.log(err)
+        }
             }else{
+                try{
                 await profileModel.findOneAndUpdate({
                     userID: message.author.id
                 }, {
@@ -63,7 +67,7 @@ module.exports = {
                     }
                 } 
             );
-    
+
             const newEmbed4 = new Discord.MessageEmbed()
             .setColor("#FF0000")
             .setTitle("💵 Economy")
@@ -72,13 +76,16 @@ module.exports = {
                 {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
-            }
+        }catch(err){
+            console.log(err)
+        }
             return
-            }
-        else if(spin === "35"){
+        }
+        if(spin === "35"){
                 const color = "green"
                 const winning_amount = amount * 35
                 if(args[1] = "green"){
+                    try{
                     await profileModel.findOneAndUpdate({
                         userID: message.author.id
                     }, {
@@ -96,8 +103,12 @@ module.exports = {
                     {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                     {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
                 )
+            }catch(err){
+                console.log(err)
+            }
                 return
                 }else{
+                    try{
                     await profileModel.findOneAndUpdate({
                         userID: message.author.id
                     }, {
@@ -115,12 +126,16 @@ module.exports = {
                     {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                     {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
                 )
+                }catch(err){
+                    console.log(err)
                 }
                 return
+            }
         }else{
             const color = "black"
             const winning_amount = amount * 2
             if(args[1] = "black"){
+                try{
                 await profileModel.findOneAndUpdate({
                     userID: message.author.id
                 }, {
@@ -138,8 +153,12 @@ module.exports = {
                 {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
+        }catch(err){
+            console.log(err)
+        }
             return
             }else{
+                try{
                 await profileModel.findOneAndUpdate({
                     userID: message.author.id
                 }, {
@@ -157,8 +176,12 @@ module.exports = {
                 {name: `${player}`, value: `Picked ${args[1]}`, inline: true},
                 {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
             )
+        }catch(err){
+            console.log(err)
+        }
+        return
             }
-            return
         }
     }
+}
 }
