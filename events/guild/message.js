@@ -1,3 +1,5 @@
+const profileModel = require('../../models/profileSchema');
+const { findOneAndDelete } = require('../../models/profileSchema');
 const cooldowns = new Map();
 
 module.exports = async (Discord, client, message) => {
@@ -11,6 +13,22 @@ module.exports = async (Discord, client, message) => {
 
     const command = client.commands.get(cmd) || client.commands.find(a => a.aliases && a.aliases.includes(cmd));
 
+    let profileData;
+    try{
+        profileData = await profileModel.findOne({ userID: message.author.id });
+        if(!profileData){
+                let profile = await profileModel.create({
+                    userID: message.author.id,
+                    serverID: message.guild.id,
+                    coins: 100,
+                    bank: 0
+                });
+                profile.save();
+            }
+        }catch(err){
+        console.log(err);
+    }
+    
     if(!cooldowns.has(command.name)){
         cooldowns.set(command.name, new Discord.Collection());
     }
@@ -33,7 +51,7 @@ module.exports = async (Discord, client, message) => {
     setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount)
 
     try {
-        command.execute(message, args, cmd, client, Discord);
+        command.execute(message, args, cmd, client, Discord, Pro);
     } catch (err) {
         console.log(err);
     }

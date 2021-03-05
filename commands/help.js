@@ -9,10 +9,20 @@ module.exports = {
         .setTitle("Help")
         .setDescription("Here's some useful commands\n\n")
         .addFields(
+            {name: '**💵 Economy**', value: "`!help Economy`", inline: true},
             {name: '**🎶 Music**', value: "`c!help music`", inline: true},
             {name: '**⚙️ Miscellaneous**', value: "`c!help miscellaneous`", inline: true},
         )
         message.channel.send(newEmbed)
+        }
+
+        if(args[0] ==  "economy"){
+            const newEmbedEconomy = new Discord.MessageEmbed()
+            .setColor("#1E90FF")
+            .setTitle("💵 Economy")
+            .setDescription("`!balance [@username (optional)], !beg, !deposit, !withdraw, !diceroll, !rob, !give`")
+            .setFooter("More commands are coimg soon!")
+            message.channel.send(newEmbedEconomy)
         }
 
         if(args[0] == "music"){
