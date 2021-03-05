@@ -7,7 +7,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
         .setColor("#1E90FF")
         .setTitle("Help")
-        .setDescription("Here's a list of some useful commands\n\n")
+        .setDescription("Here's some useful commands\n\n")
         .addFields(
             {name: '**🎶 Music**', value: "`c!help music`", inline: true},
             {name: '**⚙️ Miscellaneous**', value: "`c!help miscellaneous`", inline: true},

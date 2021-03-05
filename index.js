@@ -14,4 +14,14 @@ client.once('ready', () => {
     console.log(`cloudz has ${client.users.cache.size} users, in ${client.guilds.cache.size} servers!`);
 });
 
+mongoose.connect(process.env.MONGODB_SRV, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindandModify: false
+}).then(()=>{
+    console.log('Connected to the database!');
+}).catch((err) =>{
+    console.log(err);
+})
+
 client.login(process.env.TOKEN);
