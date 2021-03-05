@@ -9,8 +9,8 @@ module.exports = {
         .setTitle("Help")
         .setDescription("c!suggestion [suggestion]")
 
-        const channel = "813916514901295124"
-        if(!channel) return message.channel.send("Suggestion channel does not exsit");
+        const sugchannel = "813916514901295124"
+        if(!sugchannel) return message.channel.send("Suggestion channel does not exsit");
         if(!args[0]) return message.channel.send(newEmbed)
 
         let messageArgs = args.join(' ');
@@ -19,7 +19,7 @@ module.exports = {
         .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true}))
         .setDescription(messageArgs);
 
-        channel.send(embed).then((msg) =>{
+        sugchannel.send(embed).then((msg) =>{
             msg.react('👍');
             msg.react('👎');
             message.delete();
