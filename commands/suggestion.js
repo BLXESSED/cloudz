@@ -11,7 +11,7 @@ module.exports = {
 
         const member = "384571447496146955"
 
-        const sugchannel = member.guild.channel.cache.find(813916514901295124)
+        const sugchannel = member.guild.channels.cache.find("813916514901295124")
         if(!sugchannel) return message.channel.send("Suggestion channel does not exsit");
         if(!args[0]) return message.channel.send(newEmbed)
 

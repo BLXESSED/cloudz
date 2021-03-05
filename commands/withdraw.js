@@ -20,9 +20,8 @@ module.exports = {
         .setTitle("Help")
         .setDescription(`c!withdraw [amount]`)
 
-        if(!args[0]) return message.channel.send(newEmbed2);
+        if(!args[0]) return message.channel.send(newEmbed3);
         const amount = args[0];
-        if(!args[1]) return message.channel.send(newEmbed3)
         if(args % 1 != 0 || amount <= 0) return message.channel.send(newEmbed1);
         try{
             if(amount > profileData.bank) return message.channel.send(newEmbed2);
