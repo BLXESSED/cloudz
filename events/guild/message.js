@@ -43,10 +43,11 @@ module.exports = async (Discord, client, message) => {
         if(current_time < expiration_time){
             const time_left = (expiration_time - current_time) / 1000;
 
-            let days = Math.floor(time_left / 86400000);
-            let hours = Math.floor(time_left / 3600000) % 24;
-            let minutes = Math.floor(time_left / 60000) % 60;
-            let seconds = Math.floor(time_left / 1000) % 60;
+
+            let days = Math.floor(time_left.toFixed(1) / 86400000);
+            let hours = Math.floor(time_left.toFixed(1) / 3600000) % 24;
+            let minutes = Math.floor(time_left.toFixed(1) / 60000) % 60;
+            let seconds = Math.floor(time_left.toFixed(1) / 1000) % 60;
       
             return message.channel.send(`You can use .${command.name} in ${days}days, ${hours}hours, ${minutes}minutes, and ${seconds}seconds`);
         }
