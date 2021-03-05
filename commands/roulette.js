@@ -32,10 +32,10 @@ module.exports = {
         
         message.channel.send(spin)
 
-        if(spin % 2 == 0){
+        if(args[1] = "red"){
+            if(spin % 2 == 0){
             const color = "red"
             const winning_amount = amount * 2
-            if(args[1] = "red"){
                 try{
                 await profileModel.findOneAndUpdate({
                     userID: message.author.id
@@ -82,11 +82,11 @@ module.exports = {
             console.log(err)
         }
             return
-        }
+    }
+    if(args[1] = "green"){
         if(spin === "35"){
                 const color = "green"
                 const winning_amount = amount * 35
-                if(args[1] = "green"){
                     try{
                     await profileModel.findOneAndUpdate({
                         userID: message.author.id
@@ -137,10 +137,10 @@ module.exports = {
                 return
             }
         }
+        if(args[1] = "black"){
         if(!spin % 2 == 0){
             const color = "black"
             const winning_amount = amount * 2
-            if(args[1] = "black"){
                 try{
                 await profileModel.findOneAndUpdate({
                     userID: message.author.id
