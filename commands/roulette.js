@@ -28,12 +28,53 @@ module.exports = {
         if(amount > profileData.coins) return message.channel.send(newEmbed3);
 
         const spin = Math.floor(Math.random() * 35) + 1;
+
+        const player = message.author.tag
         
         message.channel.send(spin)
 
         if(spin % 2 == 0){
             const color = "red"
+            const winning_amount = amount * 2
             await message.channel.send("red")
+            if(selectedcolor = "red"){
+                await profileModel.findOneAndUpdate({
+                    userID: message.author.id
+                }, {
+                    $inc: {
+                        coins: winning_amount,
+                    }
+                } 
+            );
+    
+            const newEmbed4 = new Discord.MessageEmbed()
+            .setColor("#FF0000")
+            .setTitle("💵 Economy")
+            .setDescription(`You won **${winning_amount} coins**\n`)
+            .addFields(
+                {name: `${player}`, value: `Picked ${selectedcolor}`, inline: true},
+                {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
+            )
+            return
+            }else{
+                await profileModel.findOneAndUpdate({
+                    userID: message.author.id
+                }, {
+                    $inc: {
+                        coins: -amount,
+                    }
+                } 
+            );
+    
+            const newEmbed4 = new Discord.MessageEmbed()
+            .setColor("#FF0000")
+            .setTitle("💵 Economy")
+            .setDescription(`You lost **${amount} coins**\n`)
+            .addFields(
+                {name: `${player}`, value: `Picked ${selectedcolor}`, inline: true},
+                {name: "BLESSED's Utilities", value: `Spined ${color}`, inline: true},
+            )
+            }
             return
             }
         else if(spin === "35"){
