@@ -31,6 +31,11 @@ module.exports = {
         
         message.channel.send(spin)
 
+        if(spin % 2 == 0){
+            return message.channel.send('Your number is even');
+            }
+            else return message.channel.send('Your number is odd');
+
         if(spin === "2", "4", "6", "8", "10", "12", "14", "16", "18", "20", "22", "24", "26", "28", "30", "32", "34"){
             const color = "red"
             await message.channel.send("red")
