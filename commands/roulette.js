@@ -46,7 +46,7 @@ module.exports = {
                 } 
             );
             const newEmbed4 = new Discord.MessageEmbed()
-            .setColor("#FF0000")
+            .setColor("#008000")
             .setTitle("💵 Economy")
             .setDescription(`You won **${winning_amount} coins**\n`)
             .addFields(
@@ -98,7 +98,7 @@ module.exports = {
                 );
         
                 const newEmbed4 = new Discord.MessageEmbed()
-                .setColor("#FF0000")
+                .setColor("#008000")
                 .setTitle("💵 Economy")
                 .setDescription(`You won **${winning_amount} coins**\n`)
                 .addFields(
@@ -150,7 +150,7 @@ module.exports = {
             );
     
             const newEmbed4 = new Discord.MessageEmbed()
-            .setColor("#FF0000")
+            .setColor("#008000")
             .setTitle("💵 Economy")
             .setDescription(`You won **${winning_amount} coins**\n`)
             .addFields(
