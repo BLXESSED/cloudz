@@ -137,7 +137,7 @@ module.exports = {
                 return
             }
         }
-        if(spin % 2 == 0){
+        if(!spin % 2 == 0){
             const color = "black"
             const winning_amount = amount * 2
             if(args[1] = "black"){
