@@ -1,7 +1,7 @@
 module.exports = {
     name: 'help',
     description: "gives you a list of commands",
-    execute(message, args, cmd, client, Discord){
+    execute(message, args, cmd, client, Discord, profileData){
       
         if(!args[0]){
         const newEmbed = new Discord.MessageEmbed()

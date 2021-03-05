@@ -2,7 +2,7 @@ module.exports = {
     name: 'suggestion',
     aliases: ['suggest', 'suggestions'],
     description: "creates a suggestion!",
-    execute(message, args, cmd, client, Discord){
+    execute(message, args, cmd, client, Discord, profileData){
 
         const newEmbed = new Discord.MessageEmbed()
         .setColor("#000000")

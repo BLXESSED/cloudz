@@ -1,7 +1,7 @@
 module.exports = {
     name: 'server',
     description: "gives you an invite code to the server",
-    execute(message, args, cmd, client, Discord){
+    execute(message, args, cmd, client, Discord, profileData){
 
         const newEmbed = new Discord.MessageEmbed()
         .setColor("#000000")
