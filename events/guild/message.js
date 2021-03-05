@@ -28,7 +28,7 @@ module.exports = async (Discord, client, message) => {
         }catch(err){
         console.log(err);
     }
-    
+
     if(!cooldowns.has(command.name)){
         cooldowns.set(command.name, new Discord.Collection());
     }
@@ -51,7 +51,7 @@ module.exports = async (Discord, client, message) => {
     setTimeout(() => time_stamps.delete(message.author.id), cooldown_amount)
 
     try {
-        command.execute(message, args, cmd, client, Discord, Pro);
+        command.execute(message, args, cmd, client, Discord, profileData);
     } catch (err) {
         console.log(err);
     }
