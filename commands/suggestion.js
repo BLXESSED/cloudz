@@ -2,7 +2,7 @@ module.exports = {
     name: 'suggestion',
     aliases: ['suggest', 'suggestions'],
     description: "creates a suggestion!",
-    execute(message, args, cmd, client, Discord, profileData){
+    async execute(message, args, cmd, client, Discord, profileData){
 
         const newEmbed = new Discord.MessageEmbed()
         .setColor("#000000")
@@ -24,12 +24,12 @@ module.exports = {
         sugchannel.send(embed).then((msg) =>{
             msg.react('👍');
             msg.react('👎');
-            message.delete();
         }).catch((err)=>{
             throw err;
         })
 
-        message.channel.send("Your suggestion has been sent").then(msg => {
+        await message.delete();
+        await message.channel.send("Your suggestion has been sent").then(msg => {
             msg.delete({ timeout: 5000});
         })
     }
