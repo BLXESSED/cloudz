@@ -24,13 +24,10 @@ module.exports = {
         sugchannel.send(embed).then((msg) =>{
             msg.react('👍');
             msg.react('👎');
-            message.delete();
         }).catch((err)=>{
             throw err;
         })
 
-        message.channel.send("Your suggestion has been sent").then(msg => {
-            msg.delete({ timeout: 5000});
-        })
+        message.channel.send("Your suggestion has been sent")
     }
 }
