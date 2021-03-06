@@ -14,7 +14,7 @@ client.once('ready', () => {
     client.user.setActivity('c!help | Beta Version | Full Release Upcoming | Low Latency and 100% Free!!! | Created by BLXESSED#3960', {type: 'LISTENING'});
     console.log(`cloudz has ${client.users.cache.size} users, in ${client.guilds.cache.size} servers!`);
     const startChannel = client.channels.cache.get('817565865343713292')
-    startChannel.send('✔️ Restart Complete!\n The new update has been recieved and deployed\n\nInvite me using the link below:\nhttps://discord.com/oauth2/authorize?client_id=809138212488478730&scope=bot')
+    startChannel.send('✅ Restart Complete!\n The new update has been recieved and deployed\n\nInvite me using the link below:\nhttps://discord.com/oauth2/authorize?client_id=809138212488478730&scope=bot')
 });
 
 mongoose.connect(process.env.MONGODB_SRV, {
