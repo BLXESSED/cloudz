@@ -38,7 +38,7 @@ module.exports = {
             const newEmbedMiscellaneous = new Discord.MessageEmbed()
             .setColor("#FFFFFF")
             .setTitle("⚙️ Miscellaneous")
-            .setDescription("`c!help, c!creator, c!server, c!ping, c!invite`")
+            .setDescription("`c!help, c!creator, c!server, c!ping, c!invite, c!suggestion`")
             message.channel.send(newEmbedMiscellaneous)
         }
     }
