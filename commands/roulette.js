@@ -33,11 +33,11 @@ module.exports = {
         message.channel.send(spin)
 
         if(spin % 2 == 0){
-            const color = "red"
+            var color = "red"
         }else if (spin = 35){
-            const color = "green"
+            var color = "green"
         }else if (!spin % 2 == 0){
-            const color = "black"
+            var color = "black"
         }else{
             message.channel.send("There was an error")
         }
