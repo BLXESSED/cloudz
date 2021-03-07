@@ -5,9 +5,7 @@ module.exports = {
 
         const newEmbed = new Discord.MessageEmbed()
         .setColor("#FFFFFF")
-        .setTitle("Click me to join!")
-        .setURL('https://discord.gg/WuKeMFyhaB')
-        .setDescription("Please use the link above to join out official discord server!\n\nUse this link if you can't use the one above:\nhttps://discord.gg/WuKeMFyhaB")
+        .setDescription("Click [here](https://discord.gg/WuKeMFyhaB) to join out official discord server!\n\nUse this link if you can't use the one above:\nhttps://discord.gg/WuKeMFyhaB")
 
         message.channel.send(newEmbed)
     }
