@@ -11,6 +11,7 @@ module.exports = {
         .addFields(
             {name: '**💵 Economy**', value: "`c!help economy`", inline: true},
             {name: '**🎶 Music**', value: "`c!help music`", inline: true},
+            {name: '**🎉 Fun**', value: "`!help fun`", inline: true},
             {name: '**⚙️ Miscellaneous**', value: "`c!help miscellaneous`", inline: true},
         )
         message.channel.send(newEmbed)
@@ -41,6 +42,15 @@ module.exports = {
             .setDescription("`c!help, c!creator, c!server, c!ping, c!invite, c!suggestion`")
             message.channel.send(newEmbedMiscellaneous)
         }
+
+        if(args[0] == "fun"){
+            const newEmbedFun = new Discord.MessageEmbed()
+            .setColor("#1E90FF")
+            .setTitle("🎉 Fun")
+            .setDescription("`!8ball`")
+            .setFooter("More commands are coimg soon!")
+            message.channel.send(newEmbedFun)
+          }
         
     }
 }

@@ -5,7 +5,7 @@ module.exports = {
 
         const newEmbed = new Discord.MessageEmbed()
         .setColor("#FFFFFF")
-        .setDescription("Click [here](https://discord.com/oauth2/authorize?client_id=809138212488478730&scope=bot) to invite me to your server!\n\nUse this link if you can't use the one above:\nhttps://discord.com/oauth2/authorize?client_id=809138212488478730&scope=bot")
+        .setDescription("Click [here](https://discord.com/oauth2/authorize?client_id=809138212488478730&scope=bot&permissions=641203537) to invite me to your server!\n\nUse this link if you can't use the one above:\nhttps://discord.com/oauth2/authorize?client_id=809138212488478730&scope=bot&permissions=641203537")
 
         message.channel.send(newEmbed)
     }
