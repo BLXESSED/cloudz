@@ -21,7 +21,7 @@ module.exports = {
             const newEmbedEconomy = new Discord.MessageEmbed()
             .setColor("#FFFFFF")
             .setTitle("💵 Economy")
-            .setDescription("`c!balance [@username (optional)], c!beg, c!deposit, c!withdraw, c!diceroll, c!rob, c!give, c!roulette`")
+            .setDescription("`c!balance [@username (optional)], c!beg, c!deposit, c!withdraw, c!diceroll, c!rob, c!give, c!coinflip`")
             .setFooter("More commands are coimg soon!")
             message.channel.send(newEmbedEconomy)
         }
