@@ -27,7 +27,7 @@ module.exports = {
 
         const player = message.author.tag
 
-        const flip = Math.floor(Math.random() * 2) + 2;
+        const flip = Math.floor(Math.random() * 2) + 1;
 
         const winning_amount = amount * 2
 
