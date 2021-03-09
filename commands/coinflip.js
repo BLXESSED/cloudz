@@ -49,7 +49,7 @@ module.exports = {
                 .setDescription(`You won **${winning_amount} coins**`)
                 .addFields(
                     {name: `${player}`, value: `Picked heads`, inline: true},
-                    {name: "BLESSED's Utilities", value: `Fliped heads`, inline: true},
+                    {name: "cloudz", value: `Fliped heads`, inline: true},
                 )
                 
                 message.channel.send(newEmbed4)
@@ -76,7 +76,7 @@ module.exports = {
                 .setDescription(`You lost **${amount} coins**`)
                 .addFields(
                     {name: `${player}`, value: `Picked heads`, inline: true},
-                    {name: "BLESSED's Utilities", value: `Fliped tails`, inline: true},
+                    {name: "cloudz", value: `Fliped tails`, inline: true},
                 )
                 
                 message.channel.send(newEmbed4)
@@ -106,7 +106,7 @@ module.exports = {
                 .setDescription(`You won **${winning_amount} coins**`)
                 .addFields(
                     {name: `${player}`, value: `Picked tails`, inline: true},
-                    {name: "BLESSED's Utilities", value: `Fliped tails`, inline: true},
+                    {name: "cloudz", value: `Fliped tails`, inline: true},
                 )
                 
                 message.channel.send(newEmbed4)
@@ -133,7 +133,7 @@ module.exports = {
                 .setDescription(`You lost **${amount} coins**`)
                 .addFields(
                     {name: `${player}`, value: `Picked tails`, inline: true},
-                    {name: "BLESSED's Utilities", value: `Fliped heads`, inline: true},
+                    {name: "cloudz", value: `Fliped heads`, inline: true},
                 )
                 
                 message.channel.send(newEmbed4)

@@ -49,7 +49,7 @@ module.exports = {
         .setDescription(`You lost **${amount} coins**\n`)
         .addFields(
             {name: `${player}`, value: `Rolled ${playerRoll}`, inline: true},
-            {name: "BLESSED's Utilities", value: `Rolled ${botRoll}`, inline: true},
+            {name: "cloudz", value: `Rolled ${botRoll}`, inline: true},
         )
 
         message.channel.send(newEmbed4)
@@ -71,7 +71,7 @@ module.exports = {
         .setDescription(`You won **${winning_amount} coins**\n`)
         .addFields(
             {name: `${player}`, value: `Rolled ${playerRoll}`, inline: true},
-            {name: "BLESSED's Utilities", value: `Rolled ${botRoll}`, inline: true},
+            {name: "cloudz", value: `Rolled ${botRoll}`, inline: true},
         )
 
         message.channel.send(newEmbed5)
@@ -84,7 +84,7 @@ module.exports = {
             .setDescription(`There was a **tie**\nYou were refunded **${amount} coins**`)
             .addFields(
                 {name: `${player}`, value: `Rolled ${playerRoll}`, inline: true},
-                {name: "BLESSED's Utilities", value: `Rolled ${botRoll}`, inline: true},
+                {name: "cloudz", value: `Rolled ${botRoll}`, inline: true},
             )
     
             message.channel.send(newEmbed5)
