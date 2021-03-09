@@ -31,7 +31,7 @@ module.exports = {
 
         const winning_amount = amount * 2
 
-        if(args[1] = "heads"){
+        if(args[0] = "heads"){
             if(flip % 2 == 0){
                 try{
                     await profileModel.findOneAndUpdate({
@@ -88,7 +88,7 @@ module.exports = {
             }
         }
 
-        if(args[1] = "tails"){
+        else if(args[0] = "tails"){
             if(!flip % 2 == 0){
                 try{
                     await profileModel.findOneAndUpdate({
@@ -143,6 +143,8 @@ module.exports = {
                 }
                 return 
             }
+        }else{
+            channel.message.send(newEmbed1)
         }
 
     }
