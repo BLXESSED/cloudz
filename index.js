@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const fs = require('fs');
 const DBL = require("top.gg");
 const dbl = new DBL(process.env.TOPGG_TOKEN, client);
-const dblwebhook = new DBL(process.env.TOPGG_TOKEN, { webhookPort: 8000, webhookAuth: process.env.PASSWORD }); 
+const dblwebhook = new DBL(process.env.TOPGG_TOKEN, { webhookPort: 8000, webhookAuth: process.env.PASSWORD });
 
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();

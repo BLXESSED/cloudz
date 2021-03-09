@@ -17,7 +17,15 @@ module.exports = {
 
         var scrambledword = inputString.scramble()
 
-        message.channel.send(scrambledword)
+        const descramble = new Discord.MessageEmbed()
+            .setColor("#FFFFFF")
+            .setTitle("💵 Economy")
+            .setDescription(`Descramble the word below for coins, you have 30 seconds`)
+            .addFields(
+            {name: "cloudz", value: `Descramble "${inputString}"`, inline: true},
+            )
+
+        message.channel.send(descramble)
 
         const newEmbed4 = new Discord.MessageEmbed()
             .setColor("#008000")
