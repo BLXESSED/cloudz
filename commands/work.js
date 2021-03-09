@@ -22,7 +22,7 @@ module.exports = {
             .setTitle("💵 Economy")
             .setDescription(`Descramble the word below for coins, you have 30 seconds`)
             .addFields(
-            {name: "cloudz", value: `Descramble "${inputString}"`, inline: true},
+            {name: "cloudz", value: `Descramble "${scrambledword}"`, inline: true},
             )
 
         message.channel.send(descramble)
