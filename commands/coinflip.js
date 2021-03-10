@@ -89,7 +89,7 @@ module.exports = {
         }
 
         else if(args[0] == "tails"){
-            if(!flip % 2 == 0){
+            if(flip % 2 == 0){
                 try{
                     await profileModel.findOneAndUpdate({
                         userID: message.author.id
