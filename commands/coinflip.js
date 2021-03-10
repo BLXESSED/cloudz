@@ -38,7 +38,7 @@ module.exports = {
                         userID: message.author.id
                     }, {
                         $inc: {
-                            coins: winning_amount,
+                            coins: amount,
                         }
                     } 
                 );
@@ -46,7 +46,7 @@ module.exports = {
                 const newEmbed4 = new Discord.MessageEmbed()
                 .setColor("#008000")
                 .setTitle("💵 Economy")
-                .setDescription(`You won **${winning_amount} coins**`)
+                .setDescription(`You won **${amount} coins**`)
                 .addFields(
                     {name: `${player}`, value: `Picked heads`, inline: true},
                     {name: "cloudz", value: `Fliped heads`, inline: true},
@@ -95,7 +95,7 @@ module.exports = {
                         userID: message.author.id
                     }, {
                         $inc: {
-                            coins: winning_amount,
+                            coins: amount,
                         }
                     } 
                 );

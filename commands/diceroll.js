@@ -60,7 +60,7 @@ module.exports = {
                 userID: message.author.id
             }, {
                 $inc: {
-                    coins: winning_amount,
+                    coins: amount,
                 }
             } 
         );
