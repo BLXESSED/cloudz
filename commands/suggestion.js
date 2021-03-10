@@ -19,7 +19,8 @@ module.exports = {
         const embed = new Discord.MessageEmbed()
         .setColor("#FFFFFF")
         .setAuthor(message.author.tag, message.author.displayAvatarURL({ dynamic: true}))
-        .setDescription(messageArgs);
+        .setDescription(messageArgs)
+        .setFooter(`ID: ${message.author.id}`)
 
         sugchannel.send(embed).then((msg) =>{
             msg.react('👍');
