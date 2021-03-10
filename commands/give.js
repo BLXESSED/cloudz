@@ -22,9 +22,8 @@ module.exports = {
 
         if(!args[0]) return message.channel.send(newEmbed2)
         if(!args[1]) return message.channel.send(newEmbed2)
-        const total_amount = args[1]
-        const given_amount = total_amount * 0.9
-        if(args[1] % 1 != 0 || total_amount <= 0) return message.channel.send(newEmbed3);
+        const amount = args[1]
+        if(args[1] % 1 != 0 || amount <= 0) return message.channel.send(newEmbed3);
 
         const target = message.mentions.users.first();
         if(!target) return message.channel.send(newEmbed1)
@@ -33,12 +32,12 @@ module.exports = {
         if(!targetData) return message.channel.send(newEmbed1)
 
         try{
-            if(total_amount > profileData.coins) return message.channel.send(newEmbed2);
+            if(amount > profileData.coins) return message.channel.send(newEmbed2);
             await profileModel.findOneAndUpdate({
                 userID: message.author.id
             }, {
                 $inc: {
-                    coins: -total_amount,
+                    coins: -amount,
                 }
             } 
           );
@@ -47,7 +46,7 @@ module.exports = {
             userID: target.id
         }, {
             $inc: {
-                coins: given_amount,
+                coins: amount,
             }
         } 
       );
@@ -55,7 +54,7 @@ module.exports = {
         const newEmbed5 = new Discord.MessageEmbed()
         .setColor("#008000")
         .setTitle("💵 Economy")
-        .setDescription(`You gave ${target} **${given_amount} coins** after tax`)
+        .setDescription(`You gave ${target} **${amount} coins** after tax`)
 
         message.channel.send(newEmbed5)
 
