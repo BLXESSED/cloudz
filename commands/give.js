@@ -54,7 +54,7 @@ module.exports = {
         const newEmbed5 = new Discord.MessageEmbed()
         .setColor("#008000")
         .setTitle("💵 Economy")
-        .setDescription(`You gave ${target} **${amount} coins** after tax`)
+        .setDescription(`You gave ${target} **${amount} coins**`)
 
         message.channel.send(newEmbed5)
 
