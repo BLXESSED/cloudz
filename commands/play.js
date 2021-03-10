@@ -1,3 +1,4 @@
+const Discord = require('discord.js');
 const ytdl = require('ytdl-core');
 const ytSearch = require('yt-search');
 
@@ -132,7 +133,11 @@ const video_player = async (guild, song) => {
         song_queue.songs.shift();
         video_player(guild, song_queue.songs[0]);
     });
-    await song_queue.text_channel.send(`Now playing **${song.title}**`)
+    const newEmbed20 = new Discord.MessageEmbed()
+    .setColor("#FFFFFF")
+    .setTitle("🎶 Music")
+    .setDescription(`Now playing **${song.title}**`)
+    await song_queue.text_channel.send(newEmbed20)
 }
 
 const skip_song = (message, server_queue) => {
