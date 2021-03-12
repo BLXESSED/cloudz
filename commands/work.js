@@ -31,9 +31,6 @@ module.exports = {
             .setColor("#008000")
             .setTitle("💵 Economy")
             .setDescription(`Great job, I have you **1,000 coins** for your hard day at work`)
-            .addFields(
-            {name: "cloudz", value: `The word was "${inputString}"`, inline: true},
-            )
 
         const newEmbed6 = new Discord.MessageEmbed()
             .setColor("#FF0000")
