@@ -2,9 +2,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 const mongoose = require("mongoose");
 const fs = require('fs');
-const DBL = require("top.gg");
-const dbl = new DBL(process.env.TOPGG_TOKEN, client);
-const dblwebhook = new DBL(process.env.TOPGG_TOKEN, { webhookPort: 8000, webhookAuth: process.env.PASSWORD });
+const profileModel = require('./models/profileSchema');
 
 client.commands = new Discord.Collection();
 client.events = new Discord.Collection();
@@ -30,19 +28,42 @@ mongoose.connect(process.env.MONGODB_SRV, {
     console.log(err);
 })
 
-dbl.on('posted', () => {
-    console.log('Server count posted!');
-  })
-   
-dbl.on('error', e => {
-   console.log(`Oops! ${e}`);
-  })
+const Topgg = require("@top-gg/sdk");
+const express = require("express");
 
-dblwebhook.webhook.on('ready', hook => {
-    console.log(`Webhook running at http://${hook.hostname}:${hook.port}${hook.path}`);
-  });
-dblwebhook.webhook.on('vote', vote => {
-    console.log(`User with ID ${vote.user} just voted!`);
-  });
+const AutoPoster = require('topgg-autoposter')
+
+const ap = AutoPoster(process.env.TOPGG_TOKEN, client)
+
+ap.on('posted', () => {
+  console.log('Posted stats to Top.gg!')
+})
+
+const app = express();
+
+const webhook = new Topgg.Webhook(process.env.PASSWORD);
+
+app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
+  // req.vote will be your vote object, e.g
+  console.log(req.vote.user); // 395526710101278721 < user who voted
+  try{
+    const randomNumber = Math.floor(Math.random() * 10000) + 1000;
+    const player = req.vote.user
+    await profileModel.findOneAndUpdate({
+        userID: player
+    }, {
+        $inc: {
+            bank: randomNumber,
+        }
+    } 
+  );
+
+  client.users.cache.get(player).send(`Thank you for voting. Here is **${randomNumber} coins** as a reward. I have deposited it into your bank`);
+  }catch(err){
+    console.log(err)
+  }
+});
+
+app.listen(process.env.PORT);
 
 client.login(process.env.TOKEN);
