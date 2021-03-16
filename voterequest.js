@@ -31,7 +31,6 @@ const webhook = new Topgg.Webhook(process.env.PASSWORD);
 
 app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
   console.log(req.vote.user);
-  const userid = req.vote.user
   try{
     const randomNumber = Math.floor(Math.random() * 10000) + 1000;
     await profileModel.findOneAndUpdate({
