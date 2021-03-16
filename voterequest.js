@@ -30,8 +30,7 @@ const app = express();
 const webhook = new Topgg.Webhook(process.env.PASSWORD);
 
 app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
-  // req.vote will be your vote object, e.g
-  console.log(req.vote.user); // 395526710101278721 < user who voted
+  console.log(req.vote.user);
   try{
     const randomNumber = Math.floor(Math.random() * 10000) + 1000;
     const player = req.vote.user
@@ -44,7 +43,7 @@ app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
     } 
   );
 
-  client.users.cache.get(player).send(`Thank you for voting. Here is **${randomNumber} coins** as a reward. I have deposited it into your bank`);
+  client.users.cache.get(req.vote.user).send(`Thank you for voting. Here is **${randomNumber} coins** as a reward. I have deposited it into your bank`);
   }catch(err){
     console.log(err)
   }
