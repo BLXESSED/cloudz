@@ -19,6 +19,7 @@ const Topgg = require("@top-gg/sdk");
 const express = require("express");
 const AutoPoster = require('topgg-autoposter')
 const ap = AutoPoster(process.env.TOPGG_TOKEN, client)
+
 const app = express();
 
 const webhook = new Topgg.Webhook(process.env.PASSWORD);

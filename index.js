@@ -27,10 +27,7 @@ mongoose.connect(process.env.MONGODB_SRV, {
     console.log(err);
 })
 
-const Topgg = require("@top-gg/sdk");
-
-const express = require("express");
-
+const client = new Discord.Client() 
 const AutoPoster = require('topgg-autoposter')
 
 const ap = AutoPoster(process.env.TOPGG_TOKEN, client)
@@ -38,7 +35,5 @@ const ap = AutoPoster(process.env.TOPGG_TOKEN, client)
 ap.on('posted', () => {
   console.log('Posted stats to Top.gg!')
 })
-
-const app = express();
 
 client.login(process.env.TOKEN);
