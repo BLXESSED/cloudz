@@ -9,7 +9,8 @@ module.exports = {
         .setTitle("💵 Economy")
         .setDescription(`Vote using the link below in order to **gain up to 10,000 coins** every 12 hours`)
         .addFields(
-            {name: `Top.gg`, value: `[Click here to vote!](https://top.gg/bot/809138212488478730/vote)`, inline: true},
+            {name: `top.gg`, value: `[Click here to vote!](https://top.gg/bot/809138212488478730/vote)`, inline: true},
+            {name: `discordbotlist.com`, value: `Upcoming!`, inline: true},
         )
         .setFooter("Your coins will automatically be addded to your wallet as soon as you submit your vote")
 
