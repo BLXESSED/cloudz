@@ -1,5 +1,7 @@
 const profileModel = require('./models/profileSchema');
 
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
+
 const Topgg = require("@top-gg/sdk");
 const express = require("express");
 
