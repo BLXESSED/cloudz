@@ -43,7 +43,7 @@ app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
     } 
   );
 
-  let player = await client.users.fetch('384571447496146955').catch(() => null);
+  let player = await client.users.fetch('417825539336962059').catch(() => null);
   if(!player) console.log("*** NO PLAYER ***")
   console.log(player)
   player.send(`Thank you for voting. Here is **${randomNumber} coins** as a reward. I have deposited it into your bank`);
