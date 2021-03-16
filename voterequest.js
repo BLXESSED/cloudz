@@ -21,13 +21,9 @@ const AutoPoster = require('topgg-autoposter')
 
 const ap = AutoPoster(process.env.TOPGG_TOKEN, client)
 
-setInterval(async function(){
-  
 ap.on('posted', () => {
   console.log('Posted stats to Top.gg!')
 })
-
-}, 1200000);
 
 const app = express();
 
