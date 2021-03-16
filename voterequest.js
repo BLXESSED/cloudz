@@ -44,7 +44,7 @@ app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
     } 
   );
 
-  client.users.cache.get(player).send(`Thank you for voting. Here is **${randomNumber} coins** as a reward. I have deposited it into your bank`);
+  client.users.cache.get(req.vote.user).send(`Thank you for voting. Here is **${randomNumber} coins** as a reward. I have deposited it into your bank`);
   }catch(err){
     console.log(err)
   }
