@@ -33,6 +33,8 @@ app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
   console.log(req.vote.user);
   try{
     const randomNumber = Math.floor(Math.random() * 10000) + 1000;
+    const player = req.vote.user
+    if(!player) console.log(player)
     await profileModel.findOneAndUpdate({
         userID: req.vote.user
     }, {
@@ -42,10 +44,7 @@ app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
     } 
   );
 
-  const player = client.users.cache.get(req.vote.user)
-  console.log(player)
-  player.send(`Thank you for voting. Here is **${randomNumber} coins** as a reward. I have deposited it into your bank`);
-
+  client.users.cache.get(player).send(`Thank you for voting. Here is **${randomNumber} coins** as a reward. I have deposited it into your bank`);
   }catch(err){
     console.log(err)
   }
