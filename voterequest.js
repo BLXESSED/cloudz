@@ -34,7 +34,7 @@ app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
   try{
     const randomNumber = Math.floor(Math.random() * 10000) + 1000;
     const player = req.vote.user
-    if(!player) console.log(player)
+    if(!player) console.log("*** NO PLAYER ***")
     await profileModel.findOneAndUpdate({
         userID: req.vote.user
     }, {
