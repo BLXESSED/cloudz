@@ -1,2 +1,2 @@
-web: node index.js
+web: node voterequest.js
 Worker: node index.js
