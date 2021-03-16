@@ -27,6 +27,8 @@ mongoose.connect(process.env.MONGODB_SRV, {
     console.log(err);
 })
 
+const Topgg = require("@top-gg/sdk");
+
 const express = require("express");
 
 const AutoPoster = require('topgg-autoposter')
