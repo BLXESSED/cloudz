@@ -7,11 +7,11 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
         .setColor("#FFFFFF")
         .setTitle("💵 Economy")
-        .setDescription(`Vote using one of the link below in order to gain up to **10,000 coins** every 12 hours`)
+        .setDescription(`Vote using the link below in order to **gain up to 10,000 coins** every 12 hours`)
         .addFields(
-            {name: `Top.gg`, value: `[Click here to vote](https://top.gg/bot/809138212488478730#/)`, inline: true},
+            {name: `Top.gg`, value: `[Click here to vote!](https://top.gg/bot/809138212488478730/vote)`, inline: true},
         )
-        .setFooter("Minumun 1,000 coins")
+        .setFooter("Your coins will automatically be addded to your wallet as soon as you submit your vote")
 
         message.channel.send(newEmbed)
     }
