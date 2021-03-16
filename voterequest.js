@@ -4,6 +4,16 @@ const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]
 const mongoose = require("mongoose");
 const profileModel = require('./models/profileSchema');
 
+mongoose.connect(process.env.MONGODB_SRV, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindandModify: false
+}).then(()=>{
+    console.log('Web: Connected to the database!');
+}).catch((err) =>{
+    console.log(err);
+})
+
 const Topgg = require("@top-gg/sdk");
 const express = require("express");
 
