@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const client = new Discord.Client
+const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 
 const mongoose = require("mongoose");
 const profileModel = require('./models/profileSchema');
@@ -38,15 +38,11 @@ app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
         userID: req.vote.user
     }, {
         $inc: {
-            bank: randomNumber,
+            coins: randomNumber,
         }
     } 
   );
 
-  let player = await client.users.fetch('417825539336962059').catch(() => null);
-  if(!player) console.log("*** NO PLAYER ***")
-  console.log(player)
-  player.send(`Thank you for voting. Here is **${randomNumber} coins** as a reward. I have deposited it into your bank`);
   }catch(err){
     console.log(err)
   }
