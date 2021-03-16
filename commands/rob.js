@@ -13,7 +13,7 @@ module.exports = {
         const newEmbed2 = new Discord.MessageEmbed()
         .setColor("#FF0000")
         .setTitle("💵 Economy")
-        .setDescription("You can't rob someone who has barely anything in his pockets")
+        .setDescription("You can't rob someone who has barely anything in their pockets")
 
         const newEmbed3 = new Discord.MessageEmbed()
         .setColor("#FFFFFF")
