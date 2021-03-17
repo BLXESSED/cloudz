@@ -55,7 +55,6 @@ module.exports = {
         message.channel.send(newEmbed4)
         return
     }else{
-        if(playerRoll > botRoll){
             await profileModel.findOneAndUpdate({
                 userID: message.author.id
             }, {
@@ -75,24 +74,9 @@ module.exports = {
         )
 
         message.channel.send(newEmbed5)
-        return
-        }else{
-
-            const newEmbed5 = new Discord.MessageEmbed()
-            .setColor("#FFFFFF")
-            .setTitle("💵 Economy")
-            .setDescription(`There was a **tie**\nYou were refunded **${amount} coins**`)
-            .addFields(
-                {name: `${player}`, value: `Rolled ${playerRoll}`, inline: true},
-                {name: "cloudz", value: `Rolled ${botRoll}`, inline: true},
-            )
-    
-            message.channel.send(newEmbed5)
-            return
-        }
-    }
-        }catch(err){
-            console.log(err)
+                }
+            }catch(err){
+                console.log(err)
         }
     }
 }
