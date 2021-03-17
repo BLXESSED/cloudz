@@ -19,6 +19,11 @@ module.exports = {
         .setTitle("💵 Economy")
         .setDescription("You can only give a whole number")
 
+        const newEmbed4 = new Discord.MessageEmbed()
+        .setColor("#FF0000")
+        .setTitle("💵 Economy")
+        .setDescription("You can only give what is in your wallet")
+
 
         if(!args[0]) return message.channel.send(newEmbed2)
         if(!args[1]) return message.channel.send(newEmbed2)
@@ -32,7 +37,7 @@ module.exports = {
         if(!targetData) return message.channel.send(newEmbed1)
 
         try{
-            if(amount > profileData.coins) return message.channel.send(newEmbed2);
+            if(amount > profileData.coins) return message.channel.send(newEmbed4);
             await profileModel.findOneAndUpdate({
                 userID: message.author.id
             }, {
