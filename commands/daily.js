@@ -7,7 +7,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
         .setColor("#FFFFFF")
         .setTitle("💵 Economy")
-        .setDescription(`Vote using the link below in order to **gain up to 10,000 coins** every 12 hours`)
+        .setDescription(`Vote using the link below in order to gain **5,000 coins** every 12 hours`)
         .addFields(
             {name: `top.gg`, value: `[Click here to vote!](https://top.gg/bot/809138212488478730/vote)`, inline: true},
         )

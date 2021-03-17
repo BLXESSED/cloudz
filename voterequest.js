@@ -27,16 +27,15 @@ const webhook = new Topgg.Webhook(process.env.PASSWORD);
 app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
   console.log(req.vote.user);
   try{
-    const randomNumber = Math.floor(Math.random() * 10000) + 1000;
     await profileModel.findOneAndUpdate({
         userID: req.vote.user
     }, {
         $inc: {
-            coins: randomNumber,
+            coins: 5000,
         }
     } 
   );
-
+  client.users.cache.get(req.vote.user).send("Thank you for voting! I have gave you **5000 coins** in your wallet, make sure to deposite it before someone robs you. You can vote again after 12 hours!")
   }catch(err){
     console.log(err)
   }
