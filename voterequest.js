@@ -44,7 +44,7 @@ app.listen(process.env.PORT);
 
 
 
-const wakeUpDyno = require("wokeDyno.js");
+const wakeUpDyno = require("./wokeDyno");
 
 const PORT = process.env.PORT; 
 const DYNO_URL = "https://cloudzthebot.herokuapp.com/"; 
