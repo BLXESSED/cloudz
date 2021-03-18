@@ -16,6 +16,7 @@
     "ffmpeg-static": "^4.2.7",
     "fs": "0.0.1-security",
     "mongoose": "^5.11.18",
+    "node-fetch": "^2.6.1",
     "random-words": "^1.1.1",
     "scramble": "0.0.4",
     "topgg-autoposter": "^1.1.9",

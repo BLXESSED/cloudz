@@ -41,3 +41,16 @@ app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
 });
 
 app.listen(process.env.PORT);
+
+
+
+const wakeUpDyno = require("wokeDyno.js");
+
+const PORT = process.env.PORT; 
+const DYNO_URL = "https://cloudzthebot.herokuapp.com/"; 
+
+const app = express(); 
+
+app.listen(PORT, () => {
+    wakeUpDyno(DYNO_URL); 
+})
