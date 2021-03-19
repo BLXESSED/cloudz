@@ -11,9 +11,10 @@ module.exports = {
         .addFields(
             {name: '**💵 Economy**', value: "`c!help economy`", inline: true},
             {name: '**🎶 Music**', value: "`c!help music`", inline: true},
-            {name: '**🎉 Fun**', value: "`!help fun`", inline: true},
+            {name: '**🎉 Fun**', value: "`c!help fun`", inline: true},
             {name: '**⚙️ Miscellaneous**', value: "`c!help miscellaneous`", inline: true},
         )
+        .setFooter("Use `c!invite` to invite cloudz to your server")
         message.channel.send(newEmbed)
         }
 
