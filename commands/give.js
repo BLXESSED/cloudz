@@ -56,10 +56,13 @@ module.exports = {
         } 
       );
 
-        const newEmbed5 = new Discord.MessageEmbed()
+      const coins = profileData.coins - amount
+
+        const newEmbed5 = await new Discord.MessageEmbed()
         .setColor("#008000")
         .setTitle("💵 Economy")
         .setDescription(`You gave ${target} **${amount} coins**`)
+        .setFooter(`You now have ¢${coins.toLocaleString()}`)
 
         message.channel.send(newEmbed5)
 

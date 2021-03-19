@@ -30,8 +30,6 @@ module.exports = {
         const botRoll = Math.floor(Math.random() * 10) + 2;
         const playerRoll = Math.floor(Math.random() * 10) + 2;
 
-        const winning_amount = amount * 2
-
         try{
             if(botRoll > playerRoll){
             await profileModel.findOneAndUpdate({
@@ -43,7 +41,9 @@ module.exports = {
             } 
         );
 
-        const newEmbed4 = new Discord.MessageEmbed()
+        const coins = profileData.coins - amount
+
+        const newEmbed4 = await new Discord.MessageEmbed()
         .setColor("#FF0000")
         .setTitle("💵 Economy")
         .setDescription(`You lost **${amount} coins**\n`)
@@ -51,6 +51,7 @@ module.exports = {
             {name: `${player}`, value: `Rolled ${playerRoll}`, inline: true},
             {name: "cloudz", value: `Rolled ${botRoll}`, inline: true},
         )
+        .setFooter(`You now have ¢${coins.toLocaleString()}`)
 
         message.channel.send(newEmbed4)
         return
@@ -64,14 +65,17 @@ module.exports = {
             } 
         );
 
-        const newEmbed5 = new Discord.MessageEmbed()
+        const coins = profileData.coins + amount
+
+        const newEmbed5 = await new Discord.MessageEmbed()
         .setColor("#008000")
         .setTitle("💵 Economy")
-        .setDescription(`You won **${winning_amount} coins**\n`)
+        .setDescription(`You won **${amount} coins**\n`)
         .addFields(
             {name: `${player}`, value: `Rolled ${playerRoll}`, inline: true},
             {name: "cloudz", value: `Rolled ${botRoll}`, inline: true},
         )
+        .setFooter(`You now have ¢${coins.toLocaleString()}`)
 
         message.channel.send(newEmbed5)
                 }

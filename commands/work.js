@@ -27,10 +27,12 @@ module.exports = {
 
         message.channel.send(descramble)
 
+        const coins = profileData.coins + 1000
         const newEmbed4 = new Discord.MessageEmbed()
             .setColor("#008000")
             .setTitle("💵 Economy")
             .setDescription(`Great job, I have you **1,000 coins** for your hard day at work`)
+            .setFooter(`You now have ¢${coins.toLocaleString()}`)
 
         const newEmbed6 = new Discord.MessageEmbed()
             .setColor("#FF0000")

@@ -22,8 +22,7 @@ module.exports = {
             const newEmbedEconomy = new Discord.MessageEmbed()
             .setColor("#FFFFFF")
             .setTitle("💵 Economy")
-            .setDescription("`c!balance [@username (optional)], c!beg, c!deposit, c!withdraw, c!diceroll, c!rob, c!give, c!coinflip, c!work, c!daily, c!vote`")
-            .setFooter("More commands are coimg soon!")
+            .setDescription("`c!balance [@username (optional)], c!beg, c!deposit, c!withdraw, c!diceroll, c!rob, c!give, c!coinflip, c!work, c!daily, c!vote, c!slots`")
             message.channel.send(newEmbedEconomy)
         }
 
@@ -32,7 +31,6 @@ module.exports = {
             .setColor("#FFFFFF")
             .setTitle("🎶 Music")
             .setDescription("`c!play [song name/youtube url], c!skip, c!stop`")
-            .setFooter("More commands are coimg soon!")
             message.channel.send(newEmbedMusic)
         }
 
@@ -49,7 +47,6 @@ module.exports = {
             .setColor("#1E90FF")
             .setTitle("🎉 Fun")
             .setDescription("`c!8ball, c!say`")
-            .setFooter("More commands are coimg soon!")
             message.channel.send(newEmbedFun)
           }
         

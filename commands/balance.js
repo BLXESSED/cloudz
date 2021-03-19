@@ -4,6 +4,7 @@ module.exports = {
     aliases: ["bal", "bl"],
     description: "give you ur balance",
     async execute(message, args, cmd, client, Discord, profileData){
+        
         if(args[0]){
 
         const newEmbed2 = new Discord.MessageEmbed()
@@ -20,7 +21,7 @@ module.exports = {
         const newEmbed3 = new Discord.MessageEmbed()
         .setColor("#FFFFFF")
         .setAuthor(target.tag + "'s balance", target.displayAvatarURL({ dynamic: true}))
-        .setDescription(`Wallet: ¢${targetData.coins}\nBank: ¢${targetData.bank}`)
+        .setDescription(`Wallet: ¢${targetData.coins.toLocaleString()}\nBank: ¢${targetData.bank.toLocaleString()}`)
 
         message.channel.send(newEmbed3)
         return
@@ -28,7 +29,7 @@ module.exports = {
         const newEmbed1 = new Discord.MessageEmbed()
         .setColor("#FFFFFF")
         .setAuthor(message.author.tag + "'s balance", message.author.displayAvatarURL({ dynamic: true}))
-        .setDescription(`Wallet: ¢${profileData.coins}\nBank: ¢${profileData.bank}`)
+        .setDescription(`Wallet: ¢${profileData.coins.toLocaleString()}\nBank: ¢${profileData.bank.toLocaleString()}`)
         message.channel.send(newEmbed1)
         }
     }

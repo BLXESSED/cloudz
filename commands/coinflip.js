@@ -20,6 +20,8 @@ module.exports = {
         .setTitle("💵 Economy")
         .setDescription("You do not have enough money in your wallet to gamble")
 
+        if(!args[0] == "heads") return message.channel.send(newEmbed1)
+        if(!args[0] == "tails") return message.channel.send(newEmbed1)
         if(!args[1]) return message.channel.send(newEmbed1)
         const amount = args[1]
         if(args[1] % 1 != 0 || amount <= 0) return message.channel.send(newEmbed2);
@@ -28,8 +30,6 @@ module.exports = {
         const player = message.author.tag
 
         const flip = Math.floor(Math.random() * 2) + 1;
-
-        const winning_amount = amount * 2
 
         if(args[0] == "heads"){
             if(flip % 2 == 0){
@@ -43,7 +43,9 @@ module.exports = {
                     } 
                 );
 
-                const newEmbed4 = new Discord.MessageEmbed()
+                const coins = profileData.coins + amount
+
+                const newEmbed4 = await new Discord.MessageEmbed()
                 .setColor("#008000")
                 .setTitle("💵 Economy")
                 .setDescription(`You won **${amount} coins**`)
@@ -51,6 +53,7 @@ module.exports = {
                     {name: `${player}`, value: `Picked heads`, inline: true},
                     {name: "cloudz", value: `Fliped heads`, inline: true},
                 )
+                .setFooter(`You now have ¢${coins.toLocaleString()}`)
                 
                 message.channel.send(newEmbed4)
 
@@ -70,7 +73,9 @@ module.exports = {
                     } 
                 );
 
-                const newEmbed4 = new Discord.MessageEmbed()
+                const coins = profileData.coins - amount
+
+                const newEmbed4 = await new Discord.MessageEmbed()
                 .setColor("#FF0000")
                 .setTitle("💵 Economy")
                 .setDescription(`You lost **${amount} coins**`)
@@ -78,6 +83,7 @@ module.exports = {
                     {name: `${player}`, value: `Picked heads`, inline: true},
                     {name: "cloudz", value: `Fliped tails`, inline: true},
                 )
+                .setFooter(`You now have ¢${coins.toLocaleString()}`)
                 
                 message.channel.send(newEmbed4)
                 
@@ -100,14 +106,15 @@ module.exports = {
                     } 
                 );
 
-                const newEmbed4 = new Discord.MessageEmbed()
+                const newEmbed4 = await new Discord.MessageEmbed()
                 .setColor("#008000")
                 .setTitle("💵 Economy")
-                .setDescription(`You won **${winning_amount} coins**`)
+                .setDescription(`You won **${amount} coins**`)
                 .addFields(
                     {name: `${player}`, value: `Picked tails`, inline: true},
                     {name: "cloudz", value: `Fliped tails`, inline: true},
                 )
+                .setFooter(`You now have ¢${profileData.coins.toLocaleString()}`)
                 
                 message.channel.send(newEmbed4)
 
@@ -127,7 +134,7 @@ module.exports = {
                     } 
                 );
 
-                const newEmbed4 = new Discord.MessageEmbed()
+                const newEmbed4 = await new Discord.MessageEmbed()
                 .setColor("#FF0000")
                 .setTitle("💵 Economy")
                 .setDescription(`You lost **${amount} coins**`)
@@ -135,6 +142,7 @@ module.exports = {
                     {name: `${player}`, value: `Picked tails`, inline: true},
                     {name: "cloudz", value: `Fliped heads`, inline: true},
                 )
+                .setFooter(`You now have ¢${profileData.coins.toLocaleString()}`)
                 
                 message.channel.send(newEmbed4)
                 

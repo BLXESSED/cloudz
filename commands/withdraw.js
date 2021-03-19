@@ -35,10 +35,11 @@ module.exports = {
                 } 
               );
     
-              const newEmbed4 = new Discord.MessageEmbed()
+              const newEmbed4 = await new Discord.MessageEmbed()
               .setColor("#008000")
               .setTitle("💵 Economy")
               .setDescription(`You withdrawn **${amount} coins** from your bank account`)
+              .setFooter(`You now have ¢${profileData.coins.toLocaleString()}`)
     
               return message.channel.send(newEmbed4)
             }catch(err){
@@ -59,7 +60,7 @@ module.exports = {
             } 
           );
 
-          const newEmbed4 = new Discord.MessageEmbed()
+          const newEmbed4 = await new Discord.MessageEmbed()
           .setColor("#008000")
           .setTitle("💵 Economy")
           .setDescription(`You withdrawn **${amount} coins** from your bank account`)
