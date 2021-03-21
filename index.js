@@ -35,7 +35,7 @@ const ap = AutoPoster(process.env.TOPGG_TOKEN, client)
 ap.on('posted', () => {
   console.log('Posted stats to Top.gg!')
 })
-}, 1800000);
+}, 3600000);
 
 
 client.login(process.env.TOKEN);
