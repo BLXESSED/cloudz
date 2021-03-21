@@ -1,7 +1,7 @@
 const Memer = require("random-jokes-api");
 module.exports = {
-    name: 'showerthoughs',
-    description: "gives a showerthoughs",
+    name: 'showerthoughts',
+    description: "gives a showerthoughts",
     execute(message, args, cmd, client, Discord, profileData){
 
         const newEmbed = new Discord.MessageEmbed()
