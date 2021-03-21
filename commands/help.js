@@ -12,7 +12,7 @@ module.exports = {
             {name: '**💵 Economy**', value: "`c!help economy`", inline: true},
             {name: '**🎶 Music**', value: "`c!help music`", inline: true},
             {name: '**🎉 Fun**', value: "`c!help fun`", inline: true},
-            {name: '**⚙️ Miscellaneous**', value: "`c!help miscellaneous`", inline: true},
+            {name: '**⚙️ Utilities**', value: "`c!help utilities`", inline: true},
         )
         .setFooter("Use `c!invite` to invite cloudz to your server")
         message.channel.send(newEmbed)
@@ -34,10 +34,10 @@ module.exports = {
             message.channel.send(newEmbedMusic)
         }
 
-        if(args[0] == "miscellaneous"){
+        if(args[0] == "utilities"){
             const newEmbedMiscellaneous = new Discord.MessageEmbed()
             .setColor("#FFFFFF")
-            .setTitle("⚙️ Miscellaneous")
+            .setTitle("⚙️ Utilities")
             .setDescription("`c!help, c!creator, c!server, c!ping, c!invite, c!suggestion`")
             message.channel.send(newEmbedMiscellaneous)
         }
