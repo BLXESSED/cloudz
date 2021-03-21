@@ -46,7 +46,7 @@ module.exports = {
             const newEmbedFun = new Discord.MessageEmbed()
             .setColor("#1E90FF")
             .setTitle("🎉 Fun")
-            .setDescription("`c!8ball, c!say, c!joke, c!pun, c!roast, c!antijoke, c!quote, c!web, c!showerthoughts, c!meme`")
+            .setDescription("`c!8ball, c!say, c!joke, c!pun, c!roast, c!antijoke, c!quote, c!web, c!showerthoughts, c!meme, c!yourmama`")
             message.channel.send(newEmbedFun)
           }
         
