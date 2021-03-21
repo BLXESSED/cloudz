@@ -1,12 +1,12 @@
-const yourmama = require('yourmama')
+const Joke = require('awesome-dev-jokes');
 module.exports = {
-    name: 'yourmama',
-    description: "makes a your mama joke",
+    name: 'devjoke',
+    description: "returns awesome dev jokes",
     execute(message, args, cmd, client, Discord, profileData){
 
         const newEmbed = new Discord.MessageEmbed()
         .setColor("#FFFFFF")
-        .setDescription(yourmama.getRandom())
+        .setDescription(Joke.getRandomJoke())
 
         message.channel.send(newEmbed)
 
