@@ -96,6 +96,7 @@ module.exports = {
                     video_player(message.guild, queue_constructor.songs[0]);
                 } catch (err) {
                     queue.delete(message.guild.id);
+                    const song_info = await ytdl.getInfo(args[0]);
                     const newEmbed11 = new Discord.MessageEmbed()
                     .setColor("#008000")
                     .setTitle("🎶 Music")
@@ -106,6 +107,7 @@ module.exports = {
                 }
             } else{
                 server_queue.songs.push(song);
+                const song_info = await ytdl.getInfo(args[0]);
                 const newEmbed5 = new Discord.MessageEmbed()
                 .setColor("#008000")
                 .setTitle("🎶 Music")
@@ -148,6 +150,7 @@ const video_player = async (guild, song) => {
         song_queue.songs.shift();
         video_player(guild, song_queue.songs[0]);
     });
+    const song_info = await ytdl.getInfo(args[0]);
     const newEmbed20 = new Discord.MessageEmbed()
     .setColor("#FFFFFF")
     .setTitle("🎶 Music")
