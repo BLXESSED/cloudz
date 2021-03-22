@@ -72,7 +72,7 @@ module.exports = {
 
                 const video = await video_finder(args.join(' '));
                 if (video){
-                    song = { title: video.title, url: video.url, thumbnail_url: video.thumbnail_url }
+                    song = { title: video.title, url: video.url }
                 } else {
                      message.channel.send(newEmbed4);
                 }
@@ -100,7 +100,6 @@ module.exports = {
                     .setColor("#008000")
                     .setTitle("🎶 Music")
                     .setDescription(`Now playing **${song.title}**`)
-                    .setThumbnail(song.thumbnail_url)
                     message.channel.send(newEmbed11);
                     throw err;
                 }
@@ -110,7 +109,6 @@ module.exports = {
                 .setColor("#008000")
                 .setTitle("🎶 Music")
                 .setDescription(`**${song.title}** added to queue!`)
-                .setThumbnail(song.thumbnail_url)
                 return message.channel.send(newEmbed5);
             }
         }
