@@ -72,7 +72,7 @@ module.exports = {
 
                 const video = await video_finder(args.join(' '));
                 if (video){
-                    song = { title: video.title, url: video.url }
+                    song = { title: video.title, url: video.url, thumbnail_url: video.thumbnail_url }
                 } else {
                      message.channel.send(newEmbed4);
                 }
