@@ -7,7 +7,7 @@ module.exports = {
         const newEmbed = new Discord.MessageEmbed()
         .setColor("#FFFFFF")
         .setTitle("Help")
-        .setDescription("Here's some useful commands\n\nUse `c!vote` and recieve some special reward\n\n")
+        .setDescription("Here're some useful commands\n\nUse `c!vote` and recieve some special reward\n\n")
         .addFields(
             {name: '**💵 Economy**', value: "`c!help economy`", inline: true},
             {name: '**🎶 Music**', value: "`c!help music`", inline: true},
