@@ -48,7 +48,7 @@ module.exports = {
         const newEmbed10 = new Discord.MessageEmbed()
         .setColor("#FF0000")
         .setTitle("🎶 Music")
-        .setDescription(`There isn't anything playing`)
+        .setDescription(`There is nothing playing`)
 
         const voice_channel = message.member.voice.channel;
         if (!voice_channel) return message.channel.send(newEmbed2);
@@ -100,6 +100,7 @@ module.exports = {
                     .setColor("#008000")
                     .setTitle("🎶 Music")
                     .setDescription(`Now playing **${song.title}**`)
+                    .setThumbnail(song_info.thumbnail_url)
                     message.channel.send(newEmbed11);
                     throw err;
                 }
@@ -109,19 +110,25 @@ module.exports = {
                 .setColor("#008000")
                 .setTitle("🎶 Music")
                 .setDescription(`**${song.title}** added to queue!`)
+                .setThumbnail(song_info.thumbnail_url)
                 return message.channel.send(newEmbed5);
             }
         }
 
         else if(cmd === 'skip'){
+            if(!server_queue){
+                message.channel.send(newEmbed10)
+            }else{
             skip_song(message, server_queue);
+            }
         }
         else if(cmd === 'stop'){
             if(!server_queue){
                 message.channel.send(newEmbed10)
-            }
+            }else{
             stop_song(message, server_queue);
             message.channel.send("Bye!")
+            }
         }
     }
     
