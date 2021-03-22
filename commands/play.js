@@ -150,7 +150,6 @@ const video_player = async (guild, song) => {
     .setColor("#FFFFFF")
     .setTitle("🎶 Music")
     .setDescription(`Now playing **${song.title}**`)
-    .setThumbnail(song.thumbnail_url)
     await song_queue.text_channel.send(newEmbed20)
 }
 
