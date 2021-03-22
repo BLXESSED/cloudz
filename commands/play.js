@@ -45,6 +45,11 @@ module.exports = {
         .setTitle("🎶 Music")
         .setDescription(`There are no songs in queue`)
 
+        const newEmbed10 = new Discord.MessageEmbed()
+        .setColor("#FF0000")
+        .setTitle("🎶 Music")
+        .setDescription(`There isn't anything playing`)
+
         const voice_channel = message.member.voice.channel;
         if (!voice_channel) return message.channel.send(newEmbed2);
         const permissions = voice_channel.permissionsFor(message.client.user);
@@ -112,8 +117,11 @@ module.exports = {
             skip_song(message, server_queue);
         }
         else if(cmd === 'stop'){
+            if(!server_queue){
+                message.channel.send(newEmbed10)
+            }
             stop_song(message, server_queue);
-            message.channel.send("See yeah!")
+            message.channel.send("Bye!")
         }
     }
     
@@ -137,6 +145,7 @@ const video_player = async (guild, song) => {
     .setColor("#FFFFFF")
     .setTitle("🎶 Music")
     .setDescription(`Now playing **${song.title}**`)
+    .setThumbnail(song_info.thumbnail_url)
     await song_queue.text_channel.send(newEmbed20)
 }
 
