@@ -134,7 +134,11 @@ module.exports = {
             }
         }
         else if(cmd === 'queue')
-        console.log(queue_constructor.songs)
+        const newEmbed14 = new Discord.MessageEmbed()
+        .setColor("#FFFFFF")
+        .setTitle("🎶 Music")
+        .setDescription(`${queue_constructor.songs}`)
+        message.channel.send(newEmbed14)
     }
     
 }
