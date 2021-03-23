@@ -55,11 +55,6 @@ module.exports = {
         .setTitle("🎶 Music")
         .setDescription(`Bye!`)
 
-        const newEmbed14 = new Discord.MessageEmbed()
-        .setColor("#FFFFFF")
-        .setTitle("🎶 Music")
-        .setDescription(`${queue_constructor.songs}`)
-
         const voice_channel = message.member.voice.channel;
         if (!voice_channel) return message.channel.send(newEmbed2);
         const permissions = voice_channel.permissionsFor(message.client.user);
@@ -138,6 +133,10 @@ module.exports = {
             }
         }
         else if(cmd === 'queue'){
+        const newEmbed14 = new Discord.MessageEmbed()
+        .setColor("#FFFFFF")
+        .setTitle("🎶 Music")
+        .setDescription(`${queue_constructor.songs}`)
         message.channel.send(newEmbed14)
         }
     }
