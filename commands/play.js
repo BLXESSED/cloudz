@@ -55,6 +55,11 @@ module.exports = {
         .setTitle("🎶 Music")
         .setDescription(`Bye!`)
 
+        const newEmbed14 = new Discord.MessageEmbed()
+        .setColor("#FFFFFF")
+        .setTitle("🎶 Music")
+        .setDescription(`${queue_constructor.songs}`)
+
         const voice_channel = message.member.voice.channel;
         if (!voice_channel) return message.channel.send(newEmbed2);
         const permissions = voice_channel.permissionsFor(message.client.user);
@@ -117,7 +122,6 @@ module.exports = {
                 return message.channel.send(newEmbed5);
             }
         }
-
         else if(cmd === 'skip'){
             if(!server_queue){
                 message.channel.send(newEmbed10)
@@ -133,12 +137,9 @@ module.exports = {
             message.channel.send(newEmbed13)
             }
         }
-        else if(cmd === 'queue')
-        const newEmbed14 = new Discord.MessageEmbed()
-        .setColor("#FFFFFF")
-        .setTitle("🎶 Music")
-        .setDescription(`${queue_constructor.songs}`)
+        else if(cmd === 'queue'){
         message.channel.send(newEmbed14)
+        }
     }
     
 }
