@@ -6,7 +6,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'play',
-    aliases: ['skip', 'stop', 'queue'],
+    aliases: ['skip', 'stop'],
     description: 'Advanced music bot',
     async execute(message, args, cmd, client, Discord, profileData){
 
@@ -131,13 +131,6 @@ module.exports = {
             stop_song(message, server_queue);
             message.channel.send(newEmbed13)
             }
-        }
-        else if(cmd === 'queue'){
-        const newEmbed14 = new Discord.MessageEmbed()
-        .setColor("#FFFFFF")
-        .setTitle("🎶 Music")
-        .setDescription(`${queue_constructor.songs}`)
-        message.channel.send(newEmbed14)
         }
     }
     
