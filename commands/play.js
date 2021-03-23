@@ -6,7 +6,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'play',
-    aliases: ['skip', 'stop'],
+    aliases: ['skip', 'stop', 'queue'],
     description: 'Advanced music bot',
     async execute(message, args, cmd, client, Discord, profileData){
 
@@ -49,6 +49,11 @@ module.exports = {
         .setColor("#FF0000")
         .setTitle("🎶 Music")
         .setDescription(`There is nothing playing`)
+
+        const newEmbed13 = new Discord.MessageEmbed()
+        .setColor("#FF0000")
+        .setTitle("🎶 Music")
+        .setDescription(`Bye!`)
 
         const voice_channel = message.member.voice.channel;
         if (!voice_channel) return message.channel.send(newEmbed2);
@@ -125,9 +130,11 @@ module.exports = {
                 message.channel.send(newEmbed10)
             }else{
             stop_song(message, server_queue);
-            message.channel.send("Bye!")
+            message.channel.send(newEmbed13)
             }
         }
+        else if(cmd === 'queue')
+        console.log(queue_constructor.songs)
     }
     
 }
