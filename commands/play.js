@@ -6,7 +6,7 @@ const queue = new Map();
 
 module.exports = {
     name: 'play',
-    aliases: ['skip', 'stop'],
+    aliases: ['skip', 'stop', 'join', 'leave'],
     description: 'Advanced music bot',
     async execute(message, args, cmd, client, Discord, profileData){
 
@@ -54,6 +54,16 @@ module.exports = {
         .setColor("#FF0000")
         .setTitle("🎶 Music")
         .setDescription(`Bye!`)
+
+        const newEmbed14 = new Discord.MessageEmbed()
+        .setColor("#008000")
+        .setTitle("🎶 Music")
+        .setDescription(`Joining...`)
+
+        const newEmbed15 = new Discord.MessageEmbed()
+        .setColor("#008000")
+        .setTitle("🎶 Music")
+        .setDescription(`Leaving...`)
 
         const voice_channel = message.member.voice.channel;
         if (!voice_channel) return message.channel.send(newEmbed2);
@@ -130,6 +140,22 @@ module.exports = {
             }else{
             stop_song(message, server_queue);
             message.channel.send(newEmbed13)
+            }
+        }else if(cmd === 'join'){
+            try{
+            voice_channel.join();
+            message.channel.send(newEmbed14)
+            }catch(err){
+                console.log(err)
+                message.channel.send(newEmbed6)
+            }
+        }else if(cmd === 'leave'){
+            try{
+            voice_channel.leave();
+            message.channel.send(newEmbed15)
+            }catch(err){
+                console.log(err)
+                message.channel.send(newEmbed6)
             }
         }
     }

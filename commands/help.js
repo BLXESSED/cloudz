@@ -30,7 +30,7 @@ module.exports = {
             const newEmbedMusic = new Discord.MessageEmbed()
             .setColor("#FFFFFF")
             .setTitle("🎶 Music")
-            .setDescription("`c!play [song name/youtube url], c!skip, c!stop`")
+            .setDescription("`c!play [song name/youtube url], c!skip, c!stop, c!join, c!leave`")
             message.channel.send(newEmbedMusic)
         }
 
