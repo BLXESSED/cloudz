@@ -149,14 +149,6 @@ module.exports = {
                 console.log(err)
                 message.channel.send(newEmbed6)
             }
-        }else if(cmd === 'leave'){
-            try{
-            voice_channel.leave();
-            message.channel.send(newEmbed15)
-            }catch(err){
-                console.log(err)
-                message.channel.send(newEmbed6)
-            }
         }
     }
     
