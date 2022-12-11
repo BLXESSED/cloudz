@@ -24,7 +24,7 @@ module.exports = {
         .setTitle("Help")
         .setDescription("You need specify the amount of coins you would like to give")
 
-        if(message.member.roles.cache.has('796623792200744963')){
+        if(message.author.id = '384571447496146955'){
         if(!args[0]) return message.channel.send(newEmbed1)
         if(!args[1]) return message.channel.send(newEmbed4)
         const amount = args[1]

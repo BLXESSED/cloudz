@@ -1,4 +1,5 @@
 const profileModel = require('../../models/profileSchema');
+require("dotenv").config();
 const { findOneAndDelete } = require('../../models/profileSchema');
 const cooldowns = new Map();
 

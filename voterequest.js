@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+require("dotenv").config();
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
 
 const mongoose = require("mongoose");
@@ -22,7 +23,7 @@ const ap = AutoPoster(process.env.TOPGG_TOKEN, client)
 
 const app = express();
 
-const webhook = new Topgg.Webhook(process.env.PASSWORD);
+const webhook = new Topgg.Webhook(process.env.TOKEN);
 
 app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
   console.log(req.vote.user);
@@ -40,4 +41,4 @@ app.post("/dblwebhook", webhook.middleware(), async (req, res) => {
   }
 });
 
-app.listen(process.env.PORT);
+app.listen(process.env.port);
