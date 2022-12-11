@@ -20,7 +20,7 @@ module.exports = {
         const descramble = new Discord.MessageEmbed()
             .setColor("#FFFFFF")
             .setTitle("💵 Economy")
-            .setDescription(`Descramble the word below for coins, you have 30 seconds`)
+            .setDescription(`Descramble the word below within 30 secounds to earn 1,000 coins`)
             .addFields(
             {name: "cloudz", value: `Descramble "${scrambledword}"`, inline: true},
             )
@@ -31,13 +31,13 @@ module.exports = {
         const newEmbed4 = new Discord.MessageEmbed()
             .setColor("#008000")
             .setTitle("💵 Economy")
-            .setDescription(`Great job, I have you **1,000 coins** for your hard day at work`)
+            .setDescription(`Great job, you earned **1,000 coins** for your hard day at work`)
             .setFooter(`You now have ¢${coins.toLocaleString()}`)
 
         const newEmbed6 = new Discord.MessageEmbed()
             .setColor("#FF0000")
             .setTitle("💵 Economy")
-            .setDescription(`Horrible work, try again next time`)
+            .setDescription(`That was horrible, try again next time`)
             .addFields(
             {name: "cloudz", value: `The word was "${inputString}"`, inline: true},
             )
@@ -45,7 +45,7 @@ module.exports = {
         const newEmbed5 = new Discord.MessageEmbed()
             .setColor("#FF0000")
             .setTitle("💵 Economy")
-            .setDescription(`Horrible work, try again next time`)
+            .setDescription(`That was horrible, try again next time`)
             .addFields(
                 {name: "cloudz", value: `The word was "${inputString}"`, inline: true},
             )
