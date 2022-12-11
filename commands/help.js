@@ -18,7 +18,7 @@ module.exports = {
         message.channel.send(newEmbed)
         }
 
-        if(args[0] ==  "economy"){
+        if(args[0] ==  "economy" || "e"){
             const newEmbedEconomy = new Discord.MessageEmbed()
             .setColor("#FFFFFF")
             .setTitle("💵 Economy")
@@ -26,7 +26,7 @@ module.exports = {
             message.channel.send(newEmbedEconomy)
         }
 
-        if(args[0] == "music"){
+        if(args[0] == "music" || "m"){
             const newEmbedMusic = new Discord.MessageEmbed()
             .setColor("#FFFFFF")
             .setTitle("🎶 Music")
@@ -34,7 +34,7 @@ module.exports = {
             message.channel.send(newEmbedMusic)
         }
 
-        if(args[0] == "utilities"){
+        if(args[0] == "utilities" || "u"){
             const newEmbedMiscellaneous = new Discord.MessageEmbed()
             .setColor("#FFFFFF")
             .setTitle("⚙️ Utilities")
@@ -42,7 +42,7 @@ module.exports = {
             message.channel.send(newEmbedMiscellaneous)
         }
 
-        if(args[0] == "fun"){
+        if(args[0] == "fun" || "f"){
             const newEmbedFun = new Discord.MessageEmbed()
             .setColor("#1E90FF")
             .setTitle("🎉 Fun")
